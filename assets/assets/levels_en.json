@@ -1,0 +1,522 @@
+{
+  "c1-wake-up": {
+    "title": "Wake the Explorer",
+    "concept": "Command Order",
+    "brief": "Lead BIT to collect 2 energy cells, then reach the green portal.",
+    "hint": "First go right 2 steps, then down 2 steps, and finally right 3 steps. Each command moves BIT one step."
+  },
+  "c1-energy-corridor": {
+    "title": "Energy Corridor",
+    "concept": "Repeat Loops",
+    "brief": "This path is long! Try using Repeat to make your program shorter.",
+    "hint": "Right 5 times, down 3 times, then left 4 times. In Code mode you can use for i in range(5): and indent the next line by 4 spaces."
+  },
+  "c1-forked-path": {
+    "title": "Secret of the Fork",
+    "concept": "Route Planning",
+    "brief": "Study the fork in the path. Collect all 3 energy cells and find your way home.",
+    "hint": "The top energy cell is at the end of a side path, so you have to walk back. Go right 2, left 2, down 3, right 5, up 3."
+  },
+  "c1-spiral": {
+    "title": "Spiral Ruins",
+    "concept": "Long Routes",
+    "brief": "The hallway in the ruins winds round and round like a spiral. Work out the direction and length of each part, then write them down one by one.",
+    "hint": "Go right 6, down 4, left 6, then up 2, and finally right 4. Each part can be done with one Repeat loop."
+  },
+  "c1-zigzag": {
+    "title": "Zigzag Trail",
+    "concept": "Many Commands in a Loop",
+    "brief": "The mountain trail zigzags: right, down, right, down… Try putting Right and Down together in the same loop!",
+    "hint": "Switch to Code mode. A for loop can hold several lines, each indented 4 spaces: under for i in range(4): write hero.moveRight() and hero.moveDown(). In Blocks mode, tap Repeat, then put Right and Down inside."
+  },
+  "c1-pattern": {
+    "title": "Repeating Land",
+    "concept": "Find the Pattern",
+    "brief": "The land keeps repeating: right, right, down… Find the pattern and finish with the shortest program.",
+    "hint": "Each part is \"right 2, down 1\", repeated 3 times in total. Put these three moves inside the same loop."
+  },
+  "c1-big-stairs": {
+    "title": "Giant Stairs",
+    "concept": "Nested Loops",
+    "brief": "Every step of these stairs is wide: right 3, down 2. You can put a loop inside a loop!",
+    "hint": "The outer loop repeats 2 times. Inside it, put a \"Repeat 3 times: right\" loop, then a \"Repeat 2 times: down\" loop. Indent the inner loops 4 more spaces."
+  },
+  "c1-alleys": {
+    "title": "Energy Alleys",
+    "concept": "There and Back",
+    "brief": "Each alley has an energy cell at the end. After grabbing it, walk back to the main road. Find the pattern: go forward, peek in, come back!",
+    "hint": "Each part is: right 2, up 2, down 2. Put these three moves in one loop and repeat it 4 times. On the last time, BIT walks into the portal and stops by itself."
+  },
+  "c1-best-route": {
+    "title": "Best Route",
+    "concept": "Think First",
+    "brief": "Two energy cells sit in opposite corners. Which one you grab first changes the total number of steps! Find the order with the fewest steps.",
+    "hint": "Go to the energy cell in the top-left corner first, then the bottom-right one, and finally go to the portal in the top-right: 19 steps in total. The other way takes 2 more steps, and you won't get the shortest-route star."
+  },
+  "c1-finale": {
+    "title": "Forest Gatekeeper",
+    "concept": "Final Challenge",
+    "brief": "The last level of the forest! An energy cell hides above each stair step. Use the loop tricks you've learned to write the shortest program.",
+    "hint": "Each part is: right 2, up 1, down 1, then down 1 again. Repeat it 4 times. On the last move up, BIT walks into the portal."
+  },
+  "c2-staircase": {
+    "title": "Stair Path",
+    "concept": "If",
+    "brief": "The path goes right, then down, then right again. Use if to let BIT decide: if it can go right, go right; if not, go down.",
+    "hint": "Switch to Code mode. Inside the for loop, write if hero.canMove('right'):, then move right on the next line, indented. Then write else: and move down. You need 10 steps in total. In Blocks mode, put an If block inside Repeat, and put Down under Else."
+  },
+  "c2-waterfall": {
+    "title": "Waterfall Stairs",
+    "concept": "Order of Checks",
+    "brief": "Watch out for the fork! Which direction you check first changes what happens.",
+    "hint": "Right of the start is a dead end. This time, first check if BIT can go down: if hero.canMove('down'):, and only go right if it can't. 9 steps in total. You can also write if not hero.canMove('down'):."
+  },
+  "c2-winding-river": {
+    "title": "Winding River",
+    "concept": "elif",
+    "brief": "This time the path loops upward! Check right, then down, and if neither works, go up.",
+    "hint": "First write if hero.canMove('right'):, then use elif hero.canMove('down'): to check below, and finally else: go up. 9 steps in total."
+  },
+  "c2-landing": {
+    "title": "Stair Landing",
+    "concept": "Many Commands per Branch",
+    "brief": "These stairs go down 2 steps each time. Careful! If you only go down 1, the side path will trick you.",
+    "hint": "You can put two commands under else:. First hero.moveDown(), then hero.moveDown() again. The loop needs to run 8 times."
+  },
+  "c2-peek": {
+    "title": "Peek for Energy",
+    "concept": "if Without else",
+    "brief": "Small gaps above the main road hide energy cells, but they aren't evenly spaced. Have BIT look up after every step!",
+    "hint": "Inside the loop, first hero.moveRight(), then if hero.canMove('up'): go up and back down. An if doesn't need an else: when the check is false, nothing happens."
+  },
+  "c2-peek-both": {
+    "title": "Look Up and Down",
+    "concept": "Two ifs",
+    "brief": "This time energy cells hide above and below the main road, sometimes on both sides. After every step, look both ways.",
+    "hint": "After one step right, use one if to check above, then another if to check below. They are two separate ifs, not elif."
+  },
+  "c2-two-rules": {
+    "title": "Two-Part Route",
+    "concept": "Two Loops, Two Rules",
+    "brief": "The first half goes down to the right, but the second half goes down to the left. One rule can't do it all. Try two loops!",
+    "hint": "The first loop runs 8 times: go right if you can, otherwise go down. The second loop runs 8 times: go down if you can, otherwise go left."
+  },
+  "c2-long-river": {
+    "title": "Long River",
+    "concept": "No Step Counting",
+    "brief": "This river is long and twisty, and counting steps is tiring! As long as your rules are right, it's fine if the loop repeats extra times.",
+    "hint": "Check in this order: right, down, up (if / elif / else). Just make the loop repeat 20 times. BIT stops by itself when it enters the portal."
+  },
+  "c2-warehouse": {
+    "title": "Underground Warehouse",
+    "concept": "Combo Moves",
+    "brief": "First walk along the hallway and grab the energy cells above it, then follow the stairs down to the left to the portal. Combine the two tricks you've learned!",
+    "hint": "First loop (6 times): one step right, and if you can go up, go up and come back down. Second loop (8 times): go down if you can, otherwise go left."
+  },
+  "c2-finale": {
+    "title": "Mist Guardian",
+    "concept": "if Inside if",
+    "brief": "These stairs climb up to the right, and some steps hide an energy cell below. BIT only needs to peek down after moving right. You can put an if inside an if!",
+    "hint": "The rule: if you can go right, go right, and then, if you can go down, go down and come back up. If you can't go right, go up. Just make the loop repeat 20 times."
+  },
+  "c3-count": {
+    "title": "One Step Short",
+    "concept": "Debug: Counts",
+    "brief": "BIT's program in the Broken Factory has a bug! Run it, watch where BIT hits a wall, and find the wrong number.",
+    "hint": "When BIT hits a wall, the message tells you which line it was. BIT should go right 5 steps. What number does the program use?",
+    "starter": "# This program has 1 bug\nfor i in range(4):\n    hero.moveRight()\nfor i in range(3):\n    hero.moveDown()"
+  },
+  "c3-direction": {
+    "title": "Wrong Way",
+    "concept": "Debug: Direction",
+    "brief": "BIT goes the wrong way at the end. Run it once and see which way it goes.",
+    "hint": "The portal is up and to the right. The last part should go up, not down.",
+    "starter": "# This program has 1 bug\nfor i in range(2):\n    hero.moveUp()\nfor i in range(4):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveDown()"
+  },
+  "c3-indent": {
+    "title": "Secret of Indents",
+    "concept": "Debug: Indentation",
+    "brief": "Every command seems to be there, but BIT still hits a wall. Look closely at the spaces at the start of each line!",
+    "hint": "Indentation decides whether a line is inside the loop. hero.moveDown() should repeat together with hero.moveRight().",
+    "starter": "# This program has 1 bug\nfor i in range(3):\n    hero.moveRight()\nhero.moveDown()"
+  },
+  "c3-condition": {
+    "title": "Mixed-Up Check",
+    "concept": "Debug: Conditions",
+    "brief": "This program checks one direction but moves in another. The check and the move must match!",
+    "hint": "The direction you check with if should be the direction you move next. Here we want: if you can go right, go right.",
+    "starter": "# This program has 1 bug\nfor i in range(9):\n    if hero.canMove('down'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c3-missing-else": {
+    "title": "Stuck BIT",
+    "concept": "Debug: Missing else",
+    "brief": "The program finished, but BIT stopped halfway and won't move. What happened that the program didn't tell BIT how to handle?",
+    "hint": "When BIT can't go right or down, it needs to go up. Add else: after the elif, with hero.moveUp() inside.",
+    "starter": "# This program has 1 bug\nfor i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c3-two-bugs": {
+    "title": "Double Trouble",
+    "concept": "Debug: Two Bugs",
+    "brief": "This time there are 2 bugs! After you fix one, run it again and see how far BIT gets.",
+    "hint": "Each stair is right 3, then up 1. Check how many times the inner loop runs, and the direction of the last move.",
+    "starter": "# This program has 2 bugs\nfor i in range(2):\n    for j in range(2):\n        hero.moveRight()\n    hero.moveDown()"
+  },
+  "c3-peek-return": {
+    "title": "Forgot to Return",
+    "concept": "Debug: Missing Command",
+    "brief": "After BIT peeks down to grab an energy cell, it never gets back to the main road. What did it forget to do?",
+    "hint": "After going down to grab the energy cell, BIT must go back up to the main road. Add hero.moveUp() inside the if.",
+    "starter": "# This program has 1 bug\nfor i in range(6):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c3-check-order": {
+    "title": "Look Where First",
+    "concept": "Debug: Check Order",
+    "brief": "There's a dead end to the left of the start. The program checks left first, so BIT goes the wrong way right away.",
+    "hint": "On this map, check if BIT can go down first, and only go left if it can't. Swap the if condition and the two moves.",
+    "starter": "# This program has 1 bug\nfor i in range(9):\n    if hero.canMove('left'):\n        hero.moveLeft()\n    else:\n        hero.moveDown()"
+  },
+  "c3-two-phases": {
+    "title": "Two-Part Glitch",
+    "concept": "Debug: Two Loops",
+    "brief": "This route goes down in the first half and up in the second half. Each of the two loops hides one bug!",
+    "hint": "The first loop has to run 7 times to reach the bottom. In the second loop, when BIT can't go right, it should climb up, not go down.",
+    "starter": "# This program has 2 bugs\nfor i in range(6):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\nfor i in range(7):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c3-core": {
+    "title": "Factory Core",
+    "concept": "Debug: Final Challenge",
+    "brief": "The factory core's program has 3 bugs! Fix one at a time and run it after each fix. BIT will show you where the next problem is.",
+    "hint": "Clues: the count of the first loop, the direction BIT moves to come back after peeking, and the order of checks in the second loop (it should look right first).",
+    "starter": "# This program has 3 bugs\nfor i in range(4):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()\n        hero.moveDown()\nfor i in range(10):\n    if hero.canMove('down'):\n        hero.moveDown()\n    elif hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveUp()"
+  },
+  "c4-until-goal": {
+    "title": "No End in Sight",
+    "concept": "while Loops",
+    "brief": "This hallway is so long you can't see the end, and you can't count the steps. Try a new way: tell BIT \"keep walking until you reach the portal\"!",
+    "hint": "Switch to Code mode and write while not hero.atGoal():, then on the next line, indented 4 spaces, write hero.moveRight(). No need to count steps: BIT stops when it reaches the portal. In Blocks mode, use the Repeat while block and pick the condition \"not at the goal\"."
+  },
+  "c4-wall-run": {
+    "title": "Run to the Wall",
+    "concept": "while with canMove",
+    "brief": "Walk each hallway all the way to the end before turning. while also works with hero.canMove(): keep going as long as BIT can move forward.",
+    "hint": "Write three whiles: while hero.canMove('right'): go right, then go down, and finally go left. Each while stops just before BIT hits a wall."
+  },
+  "c4-auto-stairs": {
+    "title": "Automatic Stairs",
+    "concept": "if Inside while",
+    "brief": "Every stair has a different length. Put the checks you learned in Chapter 2 inside a while, and BIT will find its own way to the portal.",
+    "hint": "Inside while not hero.atGoal():, write if hero.canMove('right'): go right, else: go down."
+  },
+  "c4-peek-while": {
+    "title": "Look as You Go",
+    "concept": "while Plus Peeking",
+    "brief": "Keep walking right along the hallway. Small gaps above it hide energy cells. However long the hallway is, the portal is at the end.",
+    "hint": "Inside while hero.canMove('right'):, first take one step right, then use if hero.canMove('up'): to go up for the energy cell and come back down."
+  },
+  "c4-endless-river": {
+    "title": "Endless River",
+    "concept": "while with elif",
+    "brief": "The longest river yet! No more guessing how many times the loop should run. If your rules are right, BIT will go all the way to the portal.",
+    "hint": "Inside while not hero.atGoal():, check in order: if you can go right, go right; elif you can go down, go down; else go up."
+  },
+  "c4-stuck-loop": {
+    "title": "BIT Can't Stop",
+    "concept": "Debug: Infinite Loops",
+    "brief": "BIT stops moving halfway, but the loop keeps running and never stops. That's an \"infinite loop\"! Find what the program forgot to tell BIT at the spot where it gets stuck.",
+    "hint": "Where BIT gets stuck, it can't go right or down, only up. Add else: after the elif, with hero.moveUp() inside.",
+    "starter": "# This program has 1 bug\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c4-spiral": {
+    "title": "Spiral Hallway",
+    "concept": "while Inside while",
+    "brief": "The hallway winds in toward the center, and each part is shorter than the last. You can put a while inside a while!",
+    "hint": "On the outside, write while not hero.atGoal():. Inside it, put four whiles: keep going right while you can, then down, left, and up, each all the way to the end."
+  },
+  "c5-hop": {
+    "title": "Rock Hopping",
+    "concept": "def Functions",
+    "brief": "There are 3 big rocks on the path. To hop over each one, go up, right, right, down. Writing the same moves 3 times is tiring, so give them a name!",
+    "hint": "Switch to Code mode. First write def hop():, and below it, indented, write the 4 moves for hopping over a rock. After that, just write hop() and BIT hops once. The gaps between the rocks are all different."
+  },
+  "c5-tower": {
+    "title": "Over the Towers",
+    "concept": "Loops in Functions",
+    "brief": "This time, climb over 3 tall towers: climb up, cross the top, then climb down. You can put loops inside a function too!",
+    "hint": "Inside def tower():, use 3 loops: up 3 times, right 2 times, down 3 times. The gaps between the towers are different, so remember to walk across between calls."
+  },
+  "c5-two-funcs": {
+    "title": "Up and Down",
+    "concept": "Two Functions",
+    "brief": "The mountain path goes up and down in no fixed order. Define two functions, one for uphill and one for downhill, then call them in order.",
+    "hint": "def up(): up 1 step, right 2 steps. def down(): down 1 step, right 2 steps. The order is: up, up, down, up, down, down."
+  },
+  "c5-call-in-loop": {
+    "title": "Stair Factory",
+    "concept": "Calling in a Loop",
+    "brief": "Two matching sets of stairs, with a downhill part in between. Write one stair as a function, then call it in a loop.",
+    "hint": "def step(): right 2 steps, up 2 steps. First use a for loop to call step() 2 times, go right 2 steps and down 4 steps, then call it 2 more times."
+  },
+  "c5-forgot-call": {
+    "title": "One Hop Missing",
+    "concept": "Debug: Missing Call",
+    "brief": "The hop() function is correct, but BIT crashes into a rock. In front of which rock did the program forget to tell BIT to hop?",
+    "hint": "A function only runs when you call it. Count the rocks on the map, and how many times the program writes hop().",
+    "starter": "# This program has 1 bug\ndef hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\nfor i in range(2):\n    hero.moveRight()\nhop()\nfor i in range(3):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveRight()\nhop()\nhero.moveRight()"
+  },
+  "c5-patrol": {
+    "title": "Two-Level Patrol",
+    "concept": "while in Functions",
+    "brief": "Two hallways, one above the other, each with energy cells hidden above it. The patrol is exactly the same, so write it as a function and use it twice.",
+    "hint": "Inside def patrol():, write while hero.canMove('right'):, and after each step, use if to check above. Call patrol(), go down 2 steps, then call it again."
+  },
+  "c5-define-first": {
+    "title": "Unknown Command",
+    "concept": "Debug: Define First",
+    "brief": "Right at the start, BIT says it doesn't know what climb() is. The program does have def climb():, so what's wrong?",
+    "hint": "Python runs from top to bottom. When it reaches climb(), the def below hasn't run yet. Move the whole def climb(): block to the top.",
+    "starter": "# This program has 1 bug\nclimb()\nhero.moveRight()\nclimb()\n\ndef climb():\n    for i in range(2):\n        hero.moveRight()\n        hero.moveUp()"
+  },
+  "c5-workshop": {
+    "title": "Workshop Avenue",
+    "concept": "Combining Functions",
+    "brief": "Workshop Avenue has rocks to hop over and holes hiding energy cells. Find the repeated moves and decide for yourself which functions to define!",
+    "hint": "Hop over rocks with hop(): up, right, right, down. Grab energy cells in holes with dip(): down, then up. Call them in order, following the map, and remember to walk right in between."
+  },
+  "c6-steps": {
+    "title": "Long and Short Stairs",
+    "concept": "First Parameter",
+    "brief": "Each stair is \"go right a few steps, then down one step\", but the number of steps changes. Use a function with a parameter, and let each call choose the number of steps!",
+    "hint": "Inside def step(n):, write for i in range(n): to go right, then go down one step. Then call step(3), step(1), step(4), step(2) in order."
+  },
+  "c6-hills": {
+    "title": "Hills High and Low",
+    "concept": "Parameter for Height",
+    "brief": "The three hills are all different heights, and each has an energy cell on top. Climbing works the same way every time; only the height changes.",
+    "hint": "def hill(h): go up h steps, right one step, then down h steps, and finally right two steps to the next hill. Call hill(2), hill(4), hill(3)."
+  },
+  "c6-wrong-number": {
+    "title": "Wrong Number",
+    "concept": "Debug: Parameter Values",
+    "brief": "step() is written correctly, but BIT hits a wall halfway. Compare the program with the map: which call has the wrong number?",
+    "hint": "The steps right for each stair are 2, 3, 1, 3, 2. Check the number inside the brackets of each step() line, one by one.",
+    "starter": "# This program has 1 bug\ndef step(n):\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n\nstep(2)\nstep(3)\nstep(2)\nstep(3)\nstep(2)"
+  },
+  "c6-two-params": {
+    "title": "Wide and Narrow",
+    "concept": "Two Parameters",
+    "brief": "Every stair here has a different width and height. A function can have two parameters, separated by a comma.",
+    "hint": "def stair(w, h): go right w steps, then down h steps. When you call it, separate the numbers with a comma too, like stair(3, 1)."
+  },
+  "c6-hardcoded": {
+    "title": "Hard-Coded Numbers",
+    "concept": "Debug: Unused Parameter",
+    "brief": "Each mine shaft is a different depth, with an energy cell at the bottom. dig(n) has a parameter n, but BIT digs the same depth every time.",
+    "hint": "The range() inside the function should use the parameter n, not a fixed number. Check both for loops.",
+    "starter": "# This program has 2 bugs\ndef dig(n):\n    for i in range(2):\n        hero.moveDown()\n    for i in range(2):\n        hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\nhero.moveRight()\ndig(1)\ndig(3)\ndig(2)\ndig(3)"
+  },
+  "c6-pass-along": {
+    "title": "Block Mountains",
+    "concept": "Passing Parameters",
+    "brief": "Each block mountain is as wide on top as it is tall. Flat ground and mountaintops are both \"go right a few steps\", so they can share the same function.",
+    "hint": "def run(n): go right n steps. def block(n): go up n steps, call run(n) to cross the top, then go down n steps. Calling run(n) inside a function passes its own parameter along."
+  },
+  "c6-arg-order": {
+    "title": "Order Matters",
+    "concept": "Debug: Parameter Order",
+    "brief": "This program makes two mistakes when calling stair(): one call is missing a number, and one has the width and height swapped.",
+    "hint": "In stair(w, h), the first number is the width (go right) and the second is the height (go down). Every call needs two numbers, in the same order as the def.",
+    "starter": "# This program has 2 bugs\ndef stair(w, h):\n    for i in range(w):\n        hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n\nstair(3, 1)\nstair(3, 1)\nstair(2, 2)\nstair(1)\nstair(3, 2)"
+  },
+  "c6-gear-road": {
+    "title": "Gear Avenue",
+    "concept": "Combining Parameters",
+    "brief": "Gear Avenue has hills of different heights and mine shafts of different depths, with an energy cell on every hilltop and at the bottom of every shaft. Use two functions with parameters to finish the whole route!",
+    "hint": "hill(h): climb up h steps, go right, climb down h steps. dig(d): go down d steps and come back. Both functions end by going right two steps to reach the next part."
+  },
+  "c7-grow": {
+    "title": "Longer and Longer",
+    "concept": "First Variable",
+    "brief": "Each stair is one step longer than the last: 1, 2, 3, 4. Use a variable n to remember how many steps this stair needs, and add 1 to n after each stair.",
+    "hint": "First write n = 1. Inside the loop, go right range(n) steps and down one step, and finally write n += 1, so the next stair is one step longer."
+  },
+  "c7-first-key": {
+    "title": "The First Key",
+    "concept": "Keys and Doors",
+    "brief": "The doors are locked! There's a key in the passage before each door, and each passage is deeper than the last. When BIT picks up a key, it can open one door.",
+    "hint": "The passages are 1, 2 and 3 deep. Use n to remember the depth: go up n steps to get the key, go down n steps to come back, go right two steps through the door, and finally n += 1."
+  },
+  "c7-forgot-add": {
+    "title": "Forgot to Add One",
+    "concept": "Debug: Unchanged Variable",
+    "brief": "Each stair should be one step longer than the last, but BIT only walks two steps every time and hits a wall on the second stair. What's missing?",
+    "hint": "n is always 2, because no line changes it. Add n += 1 at the end of the loop, lined up with hero.moveDown().",
+    "starter": "# This program has 1 bug\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveRight()\n    hero.moveDown()"
+  },
+  "c7-countdown": {
+    "title": "Shorter and Shorter",
+    "concept": "Countdown and Compare",
+    "brief": "This time the stairs get shorter: 4, 3, 2, 1. Make n go down by 1 each time, and use while n > 0: to keep going until n becomes 0.",
+    "hint": "Start with n = 4. Inside the loop, go right n steps, go down one step, then write n -= 1. When n becomes 0, n > 0 is no longer true, so the loop stops."
+  },
+  "c7-wrong-indent": {
+    "title": "Added in Wrong Spot",
+    "concept": "Debug: Where n += 1 Goes",
+    "brief": "Each well is deeper than the last, with a key at the bottom. This program makes BIT dig too far in the second well and crash into the bottom.",
+    "hint": "n += 1 should happen once after each whole well, so it must line up with the for loops inside the outer loop, not be indented under hero.moveUp().",
+    "starter": "# This program has 1 bug\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveDown()\n    for j in range(n):\n        hero.moveUp()\n        n += 1\n    for j in range(3):\n        hero.moveRight()"
+  },
+  "c7-double": {
+    "title": "Bigger and Bigger",
+    "concept": "Doubling",
+    "brief": "Each stair is twice as long as the last: 1, 2, 4, 8. n = n + n makes n twice as big.",
+    "hint": "Start with n = 1. Inside while not hero.atGoal():, go right n steps, go down one step, then write n = n + n."
+  },
+  "c7-key-first": {
+    "title": "Key First",
+    "concept": "Debug: Order and Countdown",
+    "brief": "BIT gets stuck at a locked door right after it starts. This program has two bugs: one is about order, and one makes the loop never stop.",
+    "hint": "BIT must go left to get the key and come back before going down to open the door. Each side path is shorter than the last, so the end should be n -= 1. The loop only stops when n becomes 0.",
+    "starter": "# This program has 2 bugs\nn = 3\nwhile n > 0:\n    hero.moveDown()\n    hero.moveDown()\n    for i in range(n):\n        hero.moveLeft()\n    for i in range(n):\n        hero.moveRight()\n    n += 1"
+  },
+  "c7-vault": {
+    "title": "Deep in the Vault",
+    "concept": "Variables, while & Keys",
+    "brief": "Each stair in the vault is longer than the last. Above the end of each stair is a key, and below it is a locked door. Above the last stair is an energy cell.",
+    "hint": "Use while not hero.atGoal(): to keep going. Each time around, go right n steps, go up to get the key, go down two steps through the door, then n += 1."
+  },
+  "c8-wait": {
+    "title": "Wait, Then Go",
+    "concept": "hero.wait()",
+    "brief": "A guard robot patrols up and down at the crossing, and BIT can't step into its square. Use hero.wait() to make BIT wait one step in place until the guard moves away.",
+    "hint": "First walk two steps to just before the crossing and see where the guard is. If it's blocking the crossing, write hero.wait() to wait one step, then go right all the way."
+  },
+  "c8-watch": {
+    "title": "Perfect Timing",
+    "concept": "if with wait",
+    "brief": "Three guards watch three crossings, each with different timing. Instead of working them out one by one, let BIT look for itself: go right if it can, wait if it can't.",
+    "hint": "Inside while not hero.atGoal():, put if hero.canMove('right'): go right, else: hero.wait()."
+  },
+  "c8-switch": {
+    "title": "Step on the Switch",
+    "concept": "Switches and Gates",
+    "brief": "A gate blocks the path to the right. There's a glowing switch on the map. Step on it, and all the gates open.",
+    "hint": "First go down 3 steps to step on the switch, then come back. Once the gate opens, go right all the way. All three parts can use for loops."
+  },
+  "c8-gate-guard": {
+    "title": "Guard Behind the Gate",
+    "concept": "Switches, Gates, Guards",
+    "brief": "The switch is at the far right of the hallway. The gate is at the start of the lower path, and a guard patrols behind it. Open the gate first, then come back and pick the right moment to get past.",
+    "hint": "Go right 8 steps to the switch, left 8 steps to come back, and down 2 steps through the gate. For the last part, use while with if: go right if you can, wait if you can't."
+  },
+  "c8-impatient": {
+    "title": "Too Impatient",
+    "concept": "Debug: Waiting",
+    "brief": "BIT's program won't wait at the crossing, so BIT hits a wall. Run it and find the line where BIT shouldn't turn.",
+    "hint": "When a guard blocks the way, BIT should wait in place, not go down. Change that line to hero.wait().",
+    "starter": "# This program has 1 bug\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c8-core": {
+    "title": "Machine Core",
+    "concept": "Wait, Switches, Loops",
+    "brief": "The final machine core! The upper hallway has two guards, with a switch at the end. The lower path has a gate and another guard, and the portal is at the far left.",
+    "hint": "Go right 10 steps: before each one, first while not hero.canMove('right'): hero.wait(), then step right. After stepping on the switch, go down 3, and for the last part go left: move when you can, wait when you can't."
+  },
+  "c9-first-bug": {
+    "title": "The First Bug",
+    "concept": "Attack",
+    "brief": "A bug is blocking the path! Walk up next to it, fix it with hero.attack('right'), then head for the portal.",
+    "hint": "Go right 1 step and the bug is on your right. One hero.attack('right') fixes a small bug; then go right 4 steps. While you stand next to a bug, it bites you after every step."
+  },
+  "c9-big-bug": {
+    "title": "Three Hits for a Big Bug",
+    "concept": "Repeated Attacks",
+    "brief": "Big bugs are tougher: it takes 3 attacks to fix one, and they bite harder. Attack again and again with a loop!",
+    "hint": "Go right 2 steps to stand next to the big bug, attack 3 times with for i in range(3):, then go right 4 steps. Keep an eye on the health at the top."
+  },
+  "c9-bug-row": {
+    "title": "A Row of Little Bugs",
+    "concept": "Spot the Pattern",
+    "brief": "There is a little bug in every other square of the hall. Find the pattern “step, attack, step” and solve it all with one loop.",
+    "hint": "For each bug: go right 1, attack right, go right 1 more. Put those 3 lines in for i in range(3):, then finish with 2 steps right."
+  },
+  "c9-look-first": {
+    "title": "Look Before You Strike",
+    "concept": "Checking with enemyAt",
+    "brief": "The bugs could be anywhere in this hall. Use if hero.enemyAt('right'): to check for a bug on the right: attack if there is one, walk on if not.",
+    "hint": "Inside for i in range(14):, write if hero.enemyAt('right'): and attack right under it; under else:, go right. Attacking and walking each take a step, 14 in all."
+  },
+  "c9-corner-bugs": {
+    "title": "Bugs Around the Corner",
+    "concept": "elif for Several Cases",
+    "brief": "The path turns, and bugs may be on the right or below. Handle every case at once with if, elif and else.",
+    "hint": "Order matters: first check for a bug on the right, then for a bug below; then go right if you can, otherwise go down. 13 steps in all."
+  },
+  "c9-wrong-way": {
+    "title": "Wrong Way",
+    "concept": "Debug: Attack Direction",
+    "brief": "This program attacks the wrong way, and BIT swings at a wall! Run it, find the mistake and fix it.",
+    "hint": "The bug is below BIT, not on its right. Check which line the message points to, and fix the direction on that line.",
+    "starter": "# This program has 1 bug\nfor i in range(2):\n    hero.moveDown()\nhero.attack('right')\nfor i in range(2):\n    hero.moveDown()\nfor i in range(2):\n    hero.moveRight()"
+  },
+  "c9-low-health": {
+    "title": "Running Low",
+    "concept": "Comparing hero.health",
+    "brief": "Too many bugs on this path: BIT's health won't last to the end. Pick up the repair kit, and when health gets low, heal with hero.heal().",
+    "hint": "At the top of the loop, add if hero.health < 3: hero.heal(); then elif checks for a bug on the right, and else goes right. 18 steps in all."
+  },
+  "c9-bug-nest": {
+    "title": "The Bug Nest",
+    "concept": "Putting It Together: a Battle Plan",
+    "brief": "Two big bugs guard the heart of Bug Isle. Pick up the repair kit, work out when to heal, fix every bug and get back to the portal.",
+    "hint": "Go right 3 to pick up the repair kit, attack the big bug 3 times, then heal right away. Go round to the lower row and head left to fix the other big bug and the little one, then walk to the portal."
+  },
+  "c10-armored": {
+    "title": "Armored Bugs",
+    "concept": "Attack Minus Defense",
+    "brief": "Armored bugs have 1 defense, so each wrench hit only takes 1 health. Tap the wrench icon at the top right to open the gear workshop and buy a magnet hammer with your gears!",
+    "hint": "Damage is attack minus defense. The magnet hammer has 3 attack, so each hit takes 2 from an armored bug: two hits fix it. Use a for loop with if hero.enemyAt('right'): attack if there is a bug, otherwise go right, 10 steps in all."
+  },
+  "c10-shell": {
+    "title": "Hard Bites",
+    "concept": "Defense Cuts Damage",
+    "brief": "Big bugs bite off 2 health at a time. In an alloy shell each bite takes only 1, so BIT never has to stop and heal.",
+    "hint": "Armor with 1 defense makes each big-bug bite take just 1. Use if hero.enemyAt('right') to choose between attacking and walking, 14 steps in all. You can win without armor too: pick up the repair kit and heal between fights."
+  },
+  "c10-long-fight": {
+    "title": "The Long Fight",
+    "concept": "Maximum Health",
+    "brief": "One bug after another: fixing them all costs 11 health. With a dual battery BIT has 14 health and can charge straight through!",
+    "hint": "Fix the big bug, then the 5 little ones. Again use for with if, 19 steps in all. With only the small battery, pick up the repair kit and heal before your health runs out."
+  },
+  "c10-mixed": {
+    "title": "Mixed Squad",
+    "concept": "Same Code, Different Enemies",
+    "brief": "Armored, big and little bugs all in one hall. The good news: code that checks with if doesn't care how many hits each one takes. See a bug, attack it!",
+    "hint": "Wear the magnet hammer and the alloy shell, run a for loop 19 times, and inside it use if hero.enemyAt('right') to attack or walk on."
+  },
+  "c10-tunnel": {
+    "title": "Armored Tunnel",
+    "concept": "elif with Gear",
+    "brief": "The tunnel turns twice, and armored bugs guard the right and the way down. With the magnet hammer, handle each case with if, elif and else.",
+    "hint": "In order: a bug on the right, attack right; a bug below, attack down; if you can go right, go right; otherwise go down. 16 steps in all."
+  },
+  "c10-fixed-count": {
+    "title": "A Hard-Coded Count",
+    "concept": "Debug: New Gear",
+    "brief": "This program was written when BIT had a wrench, so it attacks 4 times. With the magnet hammer 2 hits are enough, and the third one swings at nothing! Find the number to change.",
+    "hint": "The magnet hammer takes 2 health per hit from an armored bug, and it only has 4. Check which line the message points to and fix the number of attacks.",
+    "starter": "# This program has 1 bug\nhero.moveRight()\nfor i in range(4):\n    hero.attack('right')\nfor i in range(4):\n    hero.moveRight()"
+  },
+  "c10-fortress": {
+    "title": "Armored Fortress",
+    "concept": "Putting It Together: a Battle Plan",
+    "brief": "The fortress holds armored, big and little bugs. Put on the magnet hammer, alloy shell and dual battery, then plan a route that fixes every bug.",
+    "hint": "Top row, heading right: hit the armored bug and the big bug 2 times each, grab the energy and go down 2. Bottom row, heading left: 2 hits each for the big bug and the armored bug, 1 for the little bug, then walk to the portal. 25 steps in all."
+  },
+  "c10-last-line": {
+    "title": "The Last Line",
+    "concept": "Putting It Together: Gear and Conditions",
+    "brief": "Two big bugs and two armored bugs block the end of the reef. Fully geared, BIT breaks through with one short program!",
+    "hint": "Wear all three pieces of gear, run a for loop 17 times: attack when there is a bug, otherwise walk on. Write only two action commands to earn the medal."
+  }
+}

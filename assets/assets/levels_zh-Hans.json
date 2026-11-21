@@ -1,0 +1,522 @@
+{
+  "c1-wake-up": {
+    "title": "唤醒探险家",
+    "concept": "指令顺序",
+    "brief": "带领 BIT 收集 2 颗能量，再抵达绿色传送门。",
+    "hint": "先向右走 2 格，再向下走 2 格，最后向右走 3 格。每一行指令会移动一格。"
+  },
+  "c1-energy-corridor": {
+    "title": "能量长廊",
+    "concept": "重复执行",
+    "brief": "路有点长！试着用“Repeat”让程序更精简。",
+    "hint": "向右 5 次、向下 3 次，最后向左 4 次。代码模式可使用 for i in range(5):，下一行缩进 4 个空格。"
+  },
+  "c1-forked-path": {
+    "title": "岔路的秘密",
+    "concept": "路径规划",
+    "brief": "观察岔路，收集全部 3 颗能量，找到回家的路。",
+    "hint": "上方的能量在岔路尽头，需要走回来。先右 2、左 2、下 3、右 5、上 3。"
+  },
+  "c1-spiral": {
+    "title": "螺旋遗迹",
+    "concept": "长路线规划",
+    "brief": "遗迹的走道绕成一圈圈螺旋。把每一段路的方向和长度算清楚，再一段一段写下来。",
+    "hint": "先向右 6 格、向下 4 格、向左 6 格，再向上 2 格，最后向右 4 格。每一段都可以用一个重复循环完成。"
+  },
+  "c1-zigzag": {
+    "title": "锯齿山路",
+    "concept": "循环里放多个指令",
+    "brief": "山路像锯齿一样，一右一下重复出现。试着把“向右、向下”一起放进同一个循环！",
+    "hint": "切换到代码模式，for 循环下面可以放好几行指令，每行都缩进 4 个空格：for i in range(4): 下面写 hero.moveRight() 和 hero.moveDown()。积木模式可以点“Repeat”，再把“right”“down”放进去。"
+  },
+  "c1-pattern": {
+    "title": "重复的地形",
+    "concept": "找出规律",
+    "brief": "地形一直在重复：右、右、下……找出规律，用最短的程序完成。",
+    "hint": "每一段都是“向右 2 格、向下 1 格”，总共重复 3 次。把这三个动作放进同一个循环里。"
+  },
+  "c1-big-stairs": {
+    "title": "大阶梯",
+    "concept": "嵌套循环",
+    "brief": "这座阶梯每一阶都很宽：向右 3 格、向下 2 格。循环里面还可以再放循环！",
+    "hint": "外层循环重复 2 次；里面先放一个“重复 3 次向右”的循环，再放一个“重复 2 次向下”的循环。里层循环要多缩进 4 个空格。"
+  },
+  "c1-alleys": {
+    "title": "能量小巷",
+    "concept": "去了再回来",
+    "brief": "每条小巷的尽头都有能量，捡完要走回大路。找出“前进、探头、回来”的规律！",
+    "hint": "每一段都是：向右 2、向上 2、向下 2。把这三段放进同一个循环重复 4 次——最后一次走进传送门，BIT 就会自动停下来。"
+  },
+  "c1-best-route": {
+    "title": "最佳路线",
+    "concept": "先想再走",
+    "brief": "两颗能量在相反的角落。先捡哪一颗，总步数会不一样！找出最省步数的顺序。",
+    "hint": "先往左上角的能量走，再去右下角，最后回到右上角的传送门，总共 19 步。反过来走会多 2 步，拿不到最短路线的星星。"
+  },
+  "c1-finale": {
+    "title": "森林守门人",
+    "concept": "综合挑战",
+    "brief": "森林的最后一关！每一级台阶上方都藏着能量。用学过的循环技巧，写出最精简的程序。",
+    "hint": "每一段是：向右 2、向上 1、向下 1、再向下 1。重复 4 次，最后一次向上时就会走进传送门。"
+  },
+  "c2-staircase": {
+    "title": "阶梯小径",
+    "concept": "条件判断 if",
+    "brief": "路线忽右忽下。用 if 让 BIT 自己判断：右边能走就往右，不能走就往下。",
+    "hint": "切到代码模式，在 for 循环里写 if hero.canMove('right'):，下一行缩进后往右走；接着写 else:，往下走。总共要走 10 步。积木模式可以把“If”积木放进“Repeat”里，在“Else”放“down”。"
+  },
+  "c2-waterfall": {
+    "title": "瀑布阶梯",
+    "concept": "判断的顺序",
+    "brief": "小心岔路！先检查哪个方向，结果会不一样哦。",
+    "hint": "起点右边是死路。这次要先检查能不能往下：if hero.canMove('down'):，不能才往右。总共 9 步。也可以写成 if not hero.canMove('down'):。"
+  },
+  "c2-winding-river": {
+    "title": "蜿蜒河道",
+    "concept": "多重判断 elif",
+    "brief": "这次路线会往上绕！依次检查右边、下面，都不能走就往上。",
+    "hint": "先写 if hero.canMove('right'):，再用 elif hero.canMove('down'): 检查下面，最后 else: 往上走。总共 9 步。"
+  },
+  "c2-landing": {
+    "title": "楼梯平台",
+    "concept": "分支里放多个指令",
+    "brief": "这座楼梯每次要往下走 2 格。小心！只往下走 1 格的话，会被旁边的岔路骗走。",
+    "hint": "else: 下面可以放两行指令：先 hero.moveDown()，再一次 hero.moveDown()。循环要跑 8 次。"
+  },
+  "c2-peek": {
+    "title": "探头找能量",
+    "concept": "没有 else 的 if",
+    "brief": "大路上方有几条小缝藏着能量，但位置不规则。让 BIT 每走一步就看看上面！",
+    "hint": "循环里先 hero.moveRight()，接着 if hero.canMove('up'): 往上再往下。if 可以不写 else，条件不成立就什么都不做。"
+  },
+  "c2-peek-both": {
+    "title": "上下探索",
+    "concept": "两个 if",
+    "brief": "这次能量藏在大路的上面和下面，有时两边都有。每走一步，上下都要看一看。",
+    "hint": "向右走一步后，先用一个 if 检查上面，再用另一个 if 检查下面。两个 if 是分开的，不是 elif。"
+  },
+  "c2-two-rules": {
+    "title": "双段路线",
+    "concept": "两个循环、两种判断",
+    "brief": "前半段往右下走，后半段却要往左下走。一条规则走不完，试试用两个循环！",
+    "hint": "第一个循环跑 8 次：能往右就往右，不然往下。第二个循环跑 8 次：能往下就往下，不然往左。"
+  },
+  "c2-long-river": {
+    "title": "长河导航",
+    "concept": "不用数步数",
+    "brief": "这条河道又长又弯，数步数太累了！只要规则对，循环次数给多一点也没关系。",
+    "hint": "用“右、下、上”的顺序检查（if / elif / else）。循环次数直接写 20，走进传送门就会自动停下来。"
+  },
+  "c2-warehouse": {
+    "title": "地下仓库",
+    "concept": "组合技",
+    "brief": "先沿着走道捡上方的能量，再沿着阶梯往左下走到出口。把学过的两招组合起来！",
+    "hint": "第一个循环（6 次）：向右一步，上面能走就上去再下来。第二个循环（8 次）：能往下就往下，不然往左。"
+  },
+  "c2-finale": {
+    "title": "迷雾守护者",
+    "concept": "判断里的判断",
+    "brief": "往右上爬的阶梯，有些台阶下方藏着能量。只有往右走之后才需要探头往下看——if 里面还可以再放 if！",
+    "hint": "规则：能往右就往右，而且往右之后，下面能走就下去再上来；不能往右就往上。循环次数写 20 就好。"
+  },
+  "c3-count": {
+    "title": "少走一步",
+    "concept": "调试：次数",
+    "brief": "故障工厂的 BIT 程序出错了！运行看看，观察它在哪里撞墙，找出错的那个数字。",
+    "hint": "BIT 撞墙时，消息会告诉你是第几行。往右应该走 5 格，代码里写的是几？",
+    "starter": "# 这段代码有 1 个错误\nfor i in range(4):\n    hero.moveRight()\nfor i in range(3):\n    hero.moveDown()"
+  },
+  "c3-direction": {
+    "title": "方向错了",
+    "concept": "调试：方向",
+    "brief": "BIT 最后走错方向了。先运行一次，看看它是往哪里走的。",
+    "hint": "传送门在右上方，最后一段应该往上走，而不是往下。",
+    "starter": "# 这段代码有 1 个错误\nfor i in range(2):\n    hero.moveUp()\nfor i in range(4):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveDown()"
+  },
+  "c3-indent": {
+    "title": "缩进的秘密",
+    "concept": "调试：缩进",
+    "brief": "代码看起来每个指令都有，但 BIT 还是撞墙了。仔细看每一行前面的空格！",
+    "hint": "缩进决定一行指令在不在循环里面。hero.moveDown() 应该要跟 hero.moveRight() 一起重复。",
+    "starter": "# 这段代码有 1 个错误\nfor i in range(3):\n    hero.moveRight()\nhero.moveDown()"
+  },
+  "c3-condition": {
+    "title": "相反的判断",
+    "concept": "调试：条件",
+    "brief": "这段代码检查了一个方向，却往另一个方向走。判断和动作要对得上！",
+    "hint": "if 检查的方向，应该就是接下来要走的方向。这里想要“能往右就往右”。",
+    "starter": "# 这段代码有 1 个错误\nfor i in range(9):\n    if hero.canMove('down'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c3-missing-else": {
+    "title": "卡住的 BIT",
+    "concept": "调试：少了 else",
+    "brief": "程序运行完了，BIT 却停在半路一动不动。它遇到了什么情况，程序却没有告诉它该怎么做？",
+    "hint": "右边和下面都不能走时，BIT 需要往上走。在 elif 后面补上 else:，里面写 hero.moveUp()。",
+    "starter": "# 这段代码有 1 个错误\nfor i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c3-two-bugs": {
+    "title": "双重故障",
+    "concept": "调试：两个错误",
+    "brief": "这次有 2 个错误！修好一个之后再运行一次，看看 BIT 走到哪里。",
+    "hint": "每一阶要向右 3 格、再向上 1 格。检查里层循环的次数，还有最后一个移动的方向。",
+    "starter": "# 这段代码有 2 个错误\nfor i in range(2):\n    for j in range(2):\n        hero.moveRight()\n    hero.moveDown()"
+  },
+  "c3-peek-return": {
+    "title": "忘了回来",
+    "concept": "调试：漏掉指令",
+    "brief": "BIT 探头捡能量之后，就再也回不到大路了。它少做了什么？",
+    "hint": "往下捡完能量后，要再往上回到大路。在 if 里面补上 hero.moveUp()。",
+    "starter": "# 这段代码有 1 个错误\nfor i in range(6):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c3-check-order": {
+    "title": "先看哪里",
+    "concept": "调试：判断顺序",
+    "brief": "起点左边有一条死路。代码先检查左边，结果 BIT 一开始就走错了。",
+    "hint": "这张地图要先检查能不能往下，不能才往左。把 if 的条件和两个动作对调。",
+    "starter": "# 这段代码有 1 个错误\nfor i in range(9):\n    if hero.canMove('left'):\n        hero.moveLeft()\n    else:\n        hero.moveDown()"
+  },
+  "c3-two-phases": {
+    "title": "两段式故障",
+    "concept": "调试：两个循环",
+    "brief": "前半段往下、后半段往上的路线。两个循环各藏了一个错误！",
+    "hint": "第一个循环要走 7 次才会到底。第二个循环不能往右时，应该往上爬，不是往下。",
+    "starter": "# 这段代码有 2 个错误\nfor i in range(6):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\nfor i in range(7):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c3-core": {
+    "title": "工厂核心",
+    "concept": "调试：最终挑战",
+    "brief": "工厂核心的程序有 3 个错误！一次修一个，每修一个就运行看看，BIT 会告诉你下一个问题在哪。",
+    "hint": "提示：第一个循环的次数、探头之后回来的方向，还有第二个循环的判断顺序（应该先看右边）。",
+    "starter": "# 这段代码有 3 个错误\nfor i in range(4):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()\n        hero.moveDown()\nfor i in range(10):\n    if hero.canMove('down'):\n        hero.moveDown()\n    elif hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveUp()"
+  },
+  "c4-until-goal": {
+    "title": "看不见尽头",
+    "concept": "while 循环",
+    "brief": "这条回廊长得看不见尽头，数不出要走几步。换个方法：叫 BIT“还没到传送门，就继续走”！",
+    "hint": "切到代码模式，写 while not hero.atGoal():，下一行缩进 4 个空格写 hero.moveRight()。不用数步数，走到传送门就会停。积木模式可以用“While”积木，条件选“not at the goal”。"
+  },
+  "c4-wall-run": {
+    "title": "走到底再转弯",
+    "concept": "while 搭配 canMove",
+    "brief": "每段走道都要走到底才转弯。while 也可以搭配 hero.canMove()：前面还能走，就一直走。",
+    "hint": "写三个 while：while hero.canMove('right'): 往右，接着往下，最后往左。每个 while 都会走到撞墙前停下来。"
+  },
+  "c4-auto-stairs": {
+    "title": "自动阶梯",
+    "concept": "while 里面放 if",
+    "brief": "每一阶的长度都不一样。把第 2 章学过的判断放进 while，让 BIT 自己走到传送门。",
+    "hint": "while not hero.atGoal(): 里面写 if hero.canMove('right'): 往右，else: 往下。"
+  },
+  "c4-peek-while": {
+    "title": "边走边看",
+    "concept": "while 加上探头",
+    "brief": "沿着走道一直往右，上方的小缝里藏着能量。走道多长都没关系，走到底就是传送门。",
+    "hint": "while hero.canMove('right'): 里面先往右一步，再用 if hero.canMove('up'): 往上捡能量、再往下回来。"
+  },
+  "c4-endless-river": {
+    "title": "无尽河道",
+    "concept": "while 搭配 elif",
+    "brief": "最长的一条河道！不用再猜循环要跑几次，规则对了，BIT 就会一路走到传送门。",
+    "hint": "while not hero.atGoal(): 里面依次检查：能往右就往右，elif 能往下就往下，else 往上。"
+  },
+  "c4-stuck-loop": {
+    "title": "停不下来的 BIT",
+    "concept": "调试：无限循环",
+    "brief": "BIT 走到一半就不动了，循环却一直跑、停不下来。这就是“无限循环”！找出 BIT 卡住时，程序少告诉它什么。",
+    "hint": "BIT 卡住的地方右边和下面都不能走，只能往上。在 elif 后面补上 else:，里面写 hero.moveUp()。",
+    "starter": "# 这段代码有 1 个错误\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c4-spiral": {
+    "title": "螺旋回廊",
+    "concept": "while 里的 while",
+    "brief": "回廊一圈一圈往中心绕，每一段都比上一段短。while 里面还可以再放 while！",
+    "hint": "外层写 while not hero.atGoal():。里面放四个 while：能往右就一直往右，接着往下、往左、往上，每个方向都走到底。"
+  },
+  "c5-hop": {
+    "title": "跳石头",
+    "concept": "def 函数",
+    "brief": "走道上有 3 块大石头，每次都要“上、右、右、下”跳过去。同样的动作写 3 遍太累了，帮它取个名字吧！",
+    "hint": "切到代码模式，先写 def hop():，下面缩进写跳过石头的 4 个动作。之后只要写 hop()，BIT 就会跳一次。石头之间的距离都不一样。"
+  },
+  "c5-tower": {
+    "title": "翻越高塔",
+    "concept": "函数里的循环",
+    "brief": "这次要翻过 3 座高塔：爬上去、走过塔顶、再爬下来。函数里面也可以放循环！",
+    "hint": "def tower(): 里面用 3 个循环：往上 3 次、往右 2 次、往下 3 次。塔和塔之间的距离不一样，记得在调用之间走过去。"
+  },
+  "c5-two-funcs": {
+    "title": "上上下下",
+    "concept": "两个函数",
+    "brief": "山路一下往上、一下往下，没有固定的顺序。定义两个函数，一个上坡、一个下坡，再按顺序调用。",
+    "hint": "def up(): 往上 1 步、往右 2 步；def down(): 往下 1 步、往右 2 步。顺序是：上、上、下、上、下、下。"
+  },
+  "c5-call-in-loop": {
+    "title": "阶梯工厂",
+    "concept": "循环里调用函数",
+    "brief": "两组一样的阶梯，中间隔着一段下坡。把一阶写成函数，再放进循环里调用。",
+    "hint": "def step(): 往右 2 步、往上 2 步。先用 for 循环调用 step() 2 次，往右 2 步、往下 4 步，再调用 2 次。"
+  },
+  "c5-forgot-call": {
+    "title": "漏跳一次",
+    "concept": "调试：忘了调用",
+    "brief": "hop() 函数写得没错，BIT 却撞上了石头。看看是哪一块石头前面，程序忘了叫 BIT 跳？",
+    "hint": "函数定义好之后，要调用才会执行。数数看地图上有几块石头、代码里写了几次 hop()。",
+    "starter": "# 这段代码有 1 个错误\ndef hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\nfor i in range(2):\n    hero.moveRight()\nhop()\nfor i in range(3):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveRight()\nhop()\nhero.moveRight()"
+  },
+  "c5-patrol": {
+    "title": "双层巡逻",
+    "concept": "函数里的 while",
+    "brief": "上下两条走道，上方都藏着能量。巡逻的方法一模一样，写成一个函数就能用两次。",
+    "hint": "def patrol(): 里面写 while hero.canMove('right'):，每走一步就用 if 检查上面。调用 patrol()，往下 2 步，再调用一次。"
+  },
+  "c5-define-first": {
+    "title": "还不认识的指令",
+    "concept": "调试：先定义再调用",
+    "brief": "BIT 一开始就说它不知道 climb() 是什么。代码明明有写 def climb():，问题出在哪？",
+    "hint": "Python 从上往下运行。运行到 climb() 时，下面的 def 还没跑到。把 def climb(): 整段搬到最上面。",
+    "starter": "# 这段代码有 1 个错误\nclimb()\nhero.moveRight()\nclimb()\n\ndef climb():\n    for i in range(2):\n        hero.moveRight()\n        hero.moveUp()"
+  },
+  "c5-workshop": {
+    "title": "工坊大道",
+    "concept": "组合多个函数",
+    "brief": "工坊大道上有石头要跳，也有地洞藏着能量。找出重复的动作，自己决定要定义哪些函数！",
+    "hint": "跳石头用 hop()：上、右、右、下。捡地洞的能量用 dip()：往下再往上。按照地图依次调用，中间记得往右走。"
+  },
+  "c6-steps": {
+    "title": "长短阶梯",
+    "concept": "第一个参数",
+    "brief": "每一阶都是“往右走几步、再往下一步”，只是步数不一样。用一个有参数的函数，把步数交给调用的人决定！",
+    "hint": "def step(n): 里面写 for i in range(n): 往右走，再往下一步。然后依次调用 step(3)、step(1)、step(4)、step(2)。"
+  },
+  "c6-hills": {
+    "title": "高低山丘",
+    "concept": "参数控制高度",
+    "brief": "三座山的高度都不一样，山顶各有一颗能量。爬山的动作一样，只差在要爬几格。",
+    "hint": "def hill(h): 先往上 h 格、往右一格、再往下 h 格，最后往右两格走到下一座山。调用 hill(2)、hill(4)、hill(3)。"
+  },
+  "c6-wrong-number": {
+    "title": "数字给错了",
+    "concept": "调试：参数的数字",
+    "brief": "step() 写得没问题，可是 BIT 走到一半就撞墙了。对照地图，看看哪一次调用的数字给错了。",
+    "hint": "每一阶往右走的步数分别是 2、3、1、3、2。逐一对照每一行 step() 括号里的数字。",
+    "starter": "# 这段代码有 1 个错误\ndef step(n):\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n\nstep(2)\nstep(3)\nstep(2)\nstep(3)\nstep(2)"
+  },
+  "c6-two-params": {
+    "title": "宽宽窄窄",
+    "concept": "两个参数",
+    "brief": "这座阶梯每一阶的宽度和高度都不同。函数可以有两个参数，用逗号隔开。",
+    "hint": "def stair(w, h): 先往右走 w 步，再往下走 h 步。调用时也用逗号分开，例如 stair(3, 1)。"
+  },
+  "c6-hardcoded": {
+    "title": "写死的数字",
+    "concept": "调试：忘了用参数",
+    "brief": "每口矿井深度不同，底部都有能量。dig(n) 明明有参数 n，BIT 却每次都挖一样深。",
+    "hint": "函数里的 range() 应该用参数 n，而不是写死的数字。两个 for 都要检查。",
+    "starter": "# 这段代码有 2 个错误\ndef dig(n):\n    for i in range(2):\n        hero.moveDown()\n    for i in range(2):\n        hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\nhero.moveRight()\ndig(1)\ndig(3)\ndig(2)\ndig(3)"
+  },
+  "c6-pass-along": {
+    "title": "方块山",
+    "concept": "把参数传给另一个函数",
+    "brief": "方块山有多高，山顶就有多宽。平地和山顶都是“往右走几步”，可以共用同一个函数。",
+    "hint": "def run(n): 往右走 n 步。def block(n): 往上 n 步，调用 run(n) 走过山顶，再往下 n 步。函数里调用 run(n)，就是把自己的参数传下去。"
+  },
+  "c6-arg-order": {
+    "title": "顺序很重要",
+    "concept": "调试：参数的个数和顺序",
+    "brief": "这段代码有两个地方调用 stair() 时出错：一个少给了数字，一个把宽和高的顺序弄反了。",
+    "hint": "stair(w, h) 第一个数字是宽（往右），第二个是高（往下）。每一次调用都要给两个数字，顺序和 def 一样。",
+    "starter": "# 这段代码有 2 个错误\ndef stair(w, h):\n    for i in range(w):\n        hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n\nstair(3, 1)\nstair(3, 1)\nstair(2, 2)\nstair(1)\nstair(3, 2)"
+  },
+  "c6-gear-road": {
+    "title": "齿轮大道",
+    "concept": "组合有参数的函数",
+    "brief": "齿轮大道上有高低不同的山，也有深浅不同的矿井，每个山顶和井底都有能量。用两个有参数的函数走完全程！",
+    "hint": "hill(h) 爬上 h 格、往右、爬下 h 格；dig(d) 往下 d 格再回来。两个函数最后都往右走两步，接到下一段。"
+  },
+  "c7-grow": {
+    "title": "越走越长",
+    "concept": "第一个变量",
+    "brief": "每一阶都比上一阶多走一步：1、2、3、4。用变量 n 记住这一阶要走几步，每走完一阶就把 n 加 1。",
+    "hint": "先写 n = 1。循环里往右走 range(n) 步、往下一步，最后写 n += 1，下一阶就会多走一步。"
+  },
+  "c7-first-key": {
+    "title": "第一把钥匙",
+    "concept": "钥匙和门",
+    "brief": "门锁着！每扇门前的通道里都有一把钥匙，通道一个比一个深。BIT 捡到钥匙，就能打开一扇门。",
+    "hint": "通道深度是 1、2、3。用 n 记住深度：往上走 n 步拿钥匙，再往下走 n 步回来，往右两步穿过门，最后 n += 1。"
+  },
+  "c7-forgot-add": {
+    "title": "忘了加一",
+    "concept": "调试：变量没有改变",
+    "brief": "每一阶应该比上一阶多走一步，可是 BIT 每一阶都只走两步，第二阶就撞墙了。程序少了什么？",
+    "hint": "n 一直都是 2，因为没有任何一行改变它。在循环的最后加上 n += 1，记得和 hero.moveDown() 对齐。",
+    "starter": "# 这段代码有 1 个错误\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveRight()\n    hero.moveDown()"
+  },
+  "c7-countdown": {
+    "title": "越走越短",
+    "concept": "倒数和比较",
+    "brief": "这次阶梯越来越短：4、3、2、1。让 n 每次减 1，用 while n > 0: 一直走到 n 变成 0 为止。",
+    "hint": "从 n = 4 开始。循环里往右走 n 步、往下一步，再写 n -= 1。n 变成 0 时 n > 0 不成立，循环就停了。"
+  },
+  "c7-wrong-indent": {
+    "title": "加错地方",
+    "concept": "调试：n += 1 的位置",
+    "brief": "井一口比一口深，井底都有钥匙。这段代码让 BIT 挖第二口井时挖过头，撞到了井底。",
+    "hint": "n += 1 要在每走完一口井之后做一次，所以要和外层循环里的 for 对齐，不能缩进在 hero.moveUp() 下面。",
+    "starter": "# 这段代码有 1 个错误\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveDown()\n    for j in range(n):\n        hero.moveUp()\n        n += 1\n    for j in range(3):\n        hero.moveRight()"
+  },
+  "c7-double": {
+    "title": "越跳越远",
+    "concept": "变成两倍",
+    "brief": "每一阶的长度都是上一阶的两倍：1、2、4、8。n = n + n 会把 n 变成原来的两倍。",
+    "hint": "从 n = 1 开始。while not hero.atGoal(): 里往右走 n 步、往下一步，再写 n = n + n。"
+  },
+  "c7-key-first": {
+    "title": "先拿钥匙",
+    "concept": "调试：顺序和倒数",
+    "brief": "BIT 一出发就卡在锁着的门前。这段代码有两个错误：一个是顺序，一个会让循环停不下来。",
+    "hint": "要先往左拿钥匙、走回来，才能往下开门。岔路一条比一条短，所以最后应该是 n -= 1，n 变成 0 时循环才会停。",
+    "starter": "# 这段代码有 2 个错误\nn = 3\nwhile n > 0:\n    hero.moveDown()\n    hero.moveDown()\n    for i in range(n):\n        hero.moveLeft()\n    for i in range(n):\n        hero.moveRight()\n    n += 1"
+  },
+  "c7-vault": {
+    "title": "宝库深处",
+    "concept": "综合：变量、while 和钥匙",
+    "brief": "宝库的阶梯一阶比一阶长，每一阶的尽头上方都有一把钥匙，下方是锁着的门。最后一阶的上方是能量。",
+    "hint": "用 while not hero.atGoal(): 一直走。每一圈往右走 n 步、往上拿钥匙、往下两步穿过门，再 n += 1。"
+  },
+  "c8-wait": {
+    "title": "等一下再走",
+    "concept": "hero.wait() 等待",
+    "brief": "巡逻机器人在路口上下走动，BIT 不能走进它所在的格子。用 hero.wait() 让 BIT 原地等一步，等它走开再过去。",
+    "hint": "先走两步到路口前面，看看守卫在哪里。它挡在路口时，写 hero.wait() 等一步，再一路往右走。"
+  },
+  "c8-watch": {
+    "title": "看准时机",
+    "concept": "if 搭配等待",
+    "brief": "三个守卫守着三个路口，每个时间都不一样。与其一个一个算，不如让 BIT 自己看：能往右就走，不能就等。",
+    "hint": "while not hero.atGoal(): 里面放 if hero.canMove('right'): 往右走，else: hero.wait()。"
+  },
+  "c8-switch": {
+    "title": "踩下开关",
+    "concept": "开关和闸门",
+    "brief": "往右的路被闸门挡住了。地图上有一个发光的开关，踩上去，所有闸门都会打开。",
+    "hint": "先往下走 3 步踩开关，再走回来，闸门打开后一路往右。三段都可以用 for 循环。"
+  },
+  "c8-gate-guard": {
+    "title": "闸门后的守卫",
+    "concept": "开关、闸门和守卫",
+    "brief": "开关在走廊的最右边，闸门在下面那条路的入口，闸门后面还有守卫在巡逻。先去开门，回来再看准时机通过。",
+    "hint": "往右 8 步踩开关，往左 8 步回来，往下 2 步穿过闸门。最后一段用 while 加上 if：能往右就走，不能就等。"
+  },
+  "c8-impatient": {
+    "title": "太心急了",
+    "concept": "调试：等待",
+    "brief": "BIT 的程序在路口不肯等，结果撞上了墙。运行看看，找出不该转弯的那一行。",
+    "hint": "被守卫挡住的时候，BIT 应该原地等，而不是往下走。把那一行改成 hero.wait()。",
+    "starter": "# 这段代码有 1 个错误\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c8-core": {
+    "title": "机关核心",
+    "concept": "综合：等待、开关和循环",
+    "brief": "最后的机关核心！上面的走廊有两个守卫，尽头是开关；下面那条路有闸门和另一个守卫，传送门在最左边。",
+    "hint": "往右 10 格：每一格都先 while not hero.canMove('right'): hero.wait()，再往右走。踩到开关后往下 3 格，最后一段往左，能走就走、不能就等。"
+  },
+  "c9-first-bug": {
+    "title": "第一只 bug",
+    "concept": "攻击 attack",
+    "brief": "岛上的 bug 挡住了路！走到 bug 旁边，用 hero.attack('right') 把它修好，再前往传送门。",
+    "hint": "先往右走 1 格，bug 就在右边。写 hero.attack('right') 攻击一次就能修好小 bug，接着往右走 4 格。站在 bug 旁边时，它每一步都会咬你一口。"
+  },
+  "c9-big-bug": {
+    "title": "大 bug 要打三下",
+    "concept": "重复攻击",
+    "brief": "大 bug 比较硬，要攻击 3 次才会修好，而且咬人更痛。用循环连续攻击吧！",
+    "hint": "往右走 2 格到大 bug 旁边，用 for i in range(3): 攻击 3 次，再往右走 4 格。注意画面上方的血量。"
+  },
+  "c9-bug-row": {
+    "title": "一排小 bug",
+    "concept": "找出重复的模式",
+    "brief": "走廊上每隔一格就有一只小 bug。找出「走、攻击、走」的规律，用循环一次解决。",
+    "hint": "每只 bug 都是：往右走 1 格、攻击右边、再往右走 1 格。把这 3 行放进 for i in range(3):，最后再往右走 2 格。"
+  },
+  "c9-look-first": {
+    "title": "先看再出手",
+    "concept": "条件判断 enemyAt",
+    "brief": "bug 躲在走廊的哪里不一定。用 if hero.enemyAt('right'): 先看看右边有没有 bug，有就攻击，没有就前进。",
+    "hint": "for i in range(14): 里面写 if hero.enemyAt('right'):，缩进后攻击右边；else: 底下往右走。攻击和走路都算一步，总共 14 步。"
+  },
+  "c9-corner-bugs": {
+    "title": "转角的 bug",
+    "concept": "elif 多种情况",
+    "brief": "路会转弯，bug 可能在右边也可能在下面。用 if、elif、else 一次处理好所有情况。",
+    "hint": "顺序很重要：先检查右边有没有 bug，再检查下面有没有 bug，接着右边能走就往右，不然往下。总共 13 步。"
+  },
+  "c9-wrong-way": {
+    "title": "打错方向",
+    "concept": "调试：攻击方向",
+    "brief": "这段代码攻击的方向不对，BIT 对着墙壁挥空了！运行看看，找出错误并修好它。",
+    "hint": "bug 在 BIT 的下面，不是右边。看看消息说是第几行出错，把那一行的方向改对。",
+    "starter": "# 这段代码有 1 个错误\nfor i in range(2):\n    hero.moveDown()\nhero.attack('right')\nfor i in range(2):\n    hero.moveDown()\nfor i in range(2):\n    hero.moveRight()"
+  },
+  "c9-low-health": {
+    "title": "血量快不够了",
+    "concept": "比较 hero.health",
+    "brief": "这条路上的 bug 太多，BIT 的血量撑不到终点。先捡起修复包，血量变低时用 hero.heal() 补血。",
+    "hint": "在循环最前面加上 if hero.health < 3: hero.heal()，接着 elif 检查右边有没有 bug，最后 else 往右走。总共 18 步。"
+  },
+  "c9-bug-nest": {
+    "title": "Bug 巢穴",
+    "concept": "综合：作战计划",
+    "brief": "Bug 岛的最深处有两只大 bug 守着。捡起修复包，算好什么时候补血，修好所有 bug 再回到传送门。",
+    "hint": "先往右走 3 格捡修复包，攻击大 bug 3 次后马上补血。接着绕到下面那一排，往左修好另一只大 bug 和小 bug，再走到传送门。"
+  },
+  "c10-armored": {
+    "title": "装甲 bug",
+    "concept": "攻击减去防御",
+    "brief": "装甲 bug 有 1 点防御，扳手每下只扣 1 点血。点右上角的扳手图标打开装备工坊，用齿轮买一把电磁锤吧！",
+    "hint": "伤害 = 攻击 − 防御。电磁锤攻击 3，打装甲 bug 每下扣 2，两下就修好。用 for 循环加上 if hero.enemyAt('right')，有 bug 就攻击，没有就往右走，总共 10 步。"
+  },
+  "c10-shell": {
+    "title": "咬人很痛",
+    "concept": "防御减少伤害",
+    "brief": "大 bug 每口咬掉 2 点血。穿上铝合金壳，每口只剩 1 点，就不必停下来补血了。",
+    "hint": "防御 1 的护甲让大 bug 每口只咬掉 1 点。用 if hero.enemyAt('right') 决定攻击还是前进，总共 14 步。没有护甲也能过关，记得捡修复包、找空档补血。"
+  },
+  "c10-long-fight": {
+    "title": "长期抗战",
+    "concept": "血量上限",
+    "brief": "这条路的 bug 一只接一只，打完全部要扣掉 11 点血。换上双核电池，血量上限变成 14，一口气冲过去！",
+    "hint": "先修好大 bug，再一路修好 5 只小 bug。同样用 for 加 if，总共 19 步。只有小电池的话，要捡修复包，在血量不够前补血。"
+  },
+  "c10-mixed": {
+    "title": "混合部队",
+    "concept": "同一段代码，不同敌人",
+    "brief": "装甲 bug、大 bug、小 bug 混在一起。好消息是：用 if 写的代码不用管每只要打几下，看到 bug 就攻击就对了。",
+    "hint": "穿上电磁锤和铝合金壳，for 循环跑 19 次，里面用 if hero.enemyAt('right') 决定攻击或前进。"
+  },
+  "c10-tunnel": {
+    "title": "装甲隧道",
+    "concept": "elif 加上装备",
+    "brief": "隧道转了两个弯，装甲 bug 守在右边和下面。带着电磁锤，用 if、elif、else 处理每一种情况。",
+    "hint": "顺序：右边有 bug 就往右攻击，下面有 bug 就往下攻击，右边能走就往右，不然往下。总共 16 步。"
+  },
+  "c10-fixed-count": {
+    "title": "写死的次数",
+    "concept": "调试：换了装备",
+    "brief": "这段代码是 BIT 拿扳手时写的，要打 4 下。换上电磁锤之后只要打 2 下，第 3 下就挥空了！找出要改的那个数字。",
+    "hint": "电磁锤打装甲 bug 每下扣 2 点，它只有 4 点血。看看消息是第几行出错，把攻击的次数改对。",
+    "starter": "# 这段代码有 1 个错误\nhero.moveRight()\nfor i in range(4):\n    hero.attack('right')\nfor i in range(4):\n    hero.moveRight()"
+  },
+  "c10-fortress": {
+    "title": "装甲要塞",
+    "concept": "综合：作战计划",
+    "brief": "要塞里有装甲 bug、大 bug 和小 bug。先把电磁锤、铝合金壳、双核电池都装上，再规划一条路线修好全部的 bug。",
+    "hint": "上排往右：装甲 bug 和大 bug 各打 2 下，拿到能源后往下走 2 格。下排往左：大 bug 和装甲 bug 各打 2 下，小 bug 打 1 下，最后走到传送门。总共 25 步。"
+  },
+  "c10-last-line": {
+    "title": "最后防线",
+    "concept": "综合：装备与条件",
+    "brief": "礁岩的尽头挡着两只大 bug 和两只装甲 bug。全副武装的 BIT，只要一段短短的代码就能突破！",
+    "hint": "装上三件装备，for 循环跑 17 次，有 bug 就攻击、没有就前进。只写两个动作指令就能拿到徽章。"
+  }
+}

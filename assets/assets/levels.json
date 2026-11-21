@@ -1,0 +1,1794 @@
+[
+  {
+    "id": "c1-wake-up",
+    "chapter": 1,
+    "title": "喚醒探險家",
+    "concept": "指令順序",
+    "brief": "帶領 BIT 收集 2 顆能源，再抵達綠色傳送門。",
+    "hint": "先向右走 2 格，再向下走 2 格，最後向右走 3 格。每一行指令會移動一格。",
+    "map": [
+      "#########",
+      "#########",
+      "#S.*#####",
+      "###.#####",
+      "###..*E##",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(2):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveDown()\nfor i in range(3):\n    hero.moveRight()",
+    "challenge": {
+      "loops": 1,
+      "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+    }
+  },
+  {
+    "id": "c1-energy-corridor",
+    "chapter": 1,
+    "title": "能源長廊",
+    "concept": "重複執行",
+    "brief": "路有點長！試著用「Repeat」讓程式更精簡。",
+    "hint": "向右 5 次、向下 3 次，最後向左 4 次。指令模式可使用 for i in range(5):，下一行縮排 4 個空白。",
+    "map": [
+      "#########",
+      "#S..*..##",
+      "######.##",
+      "######*##",
+      "##E.*..##",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(5):\n    hero.moveRight()\nfor i in range(3):\n    hero.moveDown()\nfor i in range(4):\n    hero.moveLeft()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c1-forked-path",
+    "chapter": 1,
+    "title": "岔路的秘密",
+    "concept": "路徑規劃",
+    "brief": "觀察岔路，收集全部 3 顆能源，找到回家的路。",
+    "hint": "上方的能源在岔路盡頭，需要走回來。先右 2、左 2、下 3、右 5、上 3。",
+    "map": [
+      "#########",
+      "#S.*##E##",
+      "#.####.##",
+      "#.####*##",
+      "#..*...##",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(2):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveLeft()\nfor i in range(3):\n    hero.moveDown()\nfor i in range(5):\n    hero.moveRight()\nfor i in range(3):\n    hero.moveUp()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c1-spiral",
+    "chapter": 1,
+    "title": "螺旋遺跡",
+    "concept": "長路線規劃",
+    "brief": "遺跡的走道繞成一圈圈螺旋。把每一段路的方向和長度算清楚，再一段一段寫下來。",
+    "hint": "先向右 6 格、向下 4 格、向左 6 格，再向上 2 格，最後向右 4 格。每一段都可以用一個重複迴圈完成。",
+    "map": [
+      "#########",
+      "#S.....*#",
+      "#######.#",
+      "#..*.E#.#",
+      "#.#####.#",
+      "#*......#",
+      "#########"
+    ],
+    "solution": "for i in range(6):\n    hero.moveRight()\nfor i in range(4):\n    hero.moveDown()\nfor i in range(6):\n    hero.moveLeft()\nfor i in range(2):\n    hero.moveUp()\nfor i in range(4):\n    hero.moveRight()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c1-zigzag",
+    "chapter": 1,
+    "title": "鋸齒山路",
+    "concept": "迴圈裡放多個指令",
+    "brief": "山路像鋸齒一樣，一右一下重複出現。試著把「向右、向下」一起放進同一個迴圈！",
+    "hint": "切換到指令模式，for 迴圈下面可以放好幾行指令，每行都縮排 4 個空白：for i in range(4): 下面寫 hero.moveRight() 和 hero.moveDown()。積木模式可以按「Repeat」，再把「right」「down」放進去。",
+    "map": [
+      "#########",
+      "#S.######",
+      "##.*#####",
+      "###..####",
+      "####.*###",
+      "#####E###",
+      "#########"
+    ],
+    "solution": "for i in range(4):\n    hero.moveRight()\n    hero.moveDown()",
+    "challenge": {
+      "without": "for",
+      "solution": "while not hero.atGoal():\n    hero.moveRight()\n    hero.moveDown()"
+    }
+  },
+  {
+    "id": "c1-pattern",
+    "chapter": 1,
+    "title": "重複的地形",
+    "concept": "找出規律",
+    "brief": "地形一直在重複：右、右、下……找出規律，用最短的程式完成。",
+    "hint": "每一段都是「向右 2 格、向下 1 格」，總共重複 3 次。把這三個動作放進同一個迴圈裡。",
+    "map": [
+      "#########",
+      "#S.*#####",
+      "###..*###",
+      "#####..*#",
+      "#######E#",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(3):\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()",
+    "challenge": {
+      "without": "for",
+      "solution": "while not hero.atGoal():\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()"
+    }
+  },
+  {
+    "id": "c1-big-stairs",
+    "chapter": 1,
+    "title": "大階梯",
+    "concept": "巢狀迴圈",
+    "brief": "這座階梯每一階都很寬：向右 3 格、向下 2 格。迴圈裡面還可以再放迴圈！",
+    "hint": "外層迴圈重複 2 次；裡面先放一個「重複 3 次向右」的迴圈，再放一個「重複 2 次向下」的迴圈。裡層迴圈要多縮排 4 個空白。",
+    "map": [
+      "#########",
+      "#S..*####",
+      "####.####",
+      "####..*.#",
+      "#######.#",
+      "#######E#",
+      "#########"
+    ],
+    "solution": "for i in range(2):\n    for j in range(3):\n        hero.moveRight()\n    for j in range(2):\n        hero.moveDown()",
+    "challenge": {
+      "without": "for",
+      "solution": "while not hero.atGoal():\n    while hero.canMove('right'):\n        hero.moveRight()\n    while hero.canMove('down'):\n        hero.moveDown()"
+    }
+  },
+  {
+    "id": "c1-alleys",
+    "chapter": 1,
+    "title": "能源小巷",
+    "concept": "去了再回來",
+    "brief": "每條小巷的盡頭都有能源，撿完要走回大路。找出「前進、探頭、回來」的規律！",
+    "hint": "每一段都是：向右 2、向上 2、向下 2。把這三段放進同一個迴圈重複 4 次——最後一次走進傳送門，BIT 就會自動停下來。",
+    "map": [
+      "###########",
+      "###########",
+      "###*#*#*#E#",
+      "###.#.#.#.#",
+      "#S........#",
+      "###########",
+      "###########"
+    ],
+    "solution": "for i in range(4):\n    for j in range(2):\n        hero.moveRight()\n    for j in range(2):\n        hero.moveUp()\n    for j in range(2):\n        hero.moveDown()",
+    "challenge": {
+      "loops": 1,
+      "solution": "for i in range(4):\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveUp()\n    hero.moveUp()\n    hero.moveDown()\n    hero.moveDown()"
+    }
+  },
+  {
+    "id": "c1-best-route",
+    "chapter": 1,
+    "title": "最佳路線",
+    "concept": "先想再走",
+    "brief": "兩顆能源在相反的角落。先撿哪一顆，總步數會不一樣！找出最省步數的順序。",
+    "hint": "先往左上角的能源走，再去右下角，最後回到右上角的傳送門，總共 19 步。反過來走會多 2 步，拿不到最短路線的星星。",
+    "map": [
+      "#########",
+      "#*.....E#",
+      "#.......#",
+      "#...S...#",
+      "#.......#",
+      "#......*#",
+      "#########"
+    ],
+    "solution": "for i in range(3):\n    hero.moveLeft()\nfor i in range(2):\n    hero.moveUp()\nfor i in range(6):\n    hero.moveRight()\nfor i in range(4):\n    hero.moveDown()\nfor i in range(4):\n    hero.moveUp()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c1-finale",
+    "chapter": 1,
+    "title": "森林守門人",
+    "concept": "綜合挑戰",
+    "brief": "森林的最後一關！每一階台階上方都藏著能源。用學過的迴圈技巧，寫出最精簡的程式。",
+    "hint": "每一段是：向右 2、向上 1、向下 1、再向下 1。重複 4 次，最後一次向上時就會走進傳送門。",
+    "map": [
+      "###########",
+      "###*#######",
+      "#S..#*#####",
+      "###...#*###",
+      "#####...#E#",
+      "#######...#",
+      "###########",
+      "###########"
+    ],
+    "solution": "for i in range(4):\n    for j in range(2):\n        hero.moveRight()\n    hero.moveUp()\n    hero.moveDown()\n    hero.moveDown()",
+    "challenge": {
+      "moves": 3,
+      "solution": "for i in range(4):\n    for j in range(2):\n        hero.moveRight()\n    hero.moveUp()\n    for j in range(2):\n        hero.moveDown()"
+    }
+  },
+  {
+    "id": "c2-staircase",
+    "chapter": 2,
+    "title": "階梯小徑",
+    "concept": "條件判斷 if",
+    "brief": "路線忽右忽下。用 if 讓 BIT 自己判斷：右邊能走就往右，不能走就往下。",
+    "hint": "切到指令模式，在 for 迴圈裡寫 if hero.canMove('right'):，下一行縮排後往右走；接著寫 else:，往下走。總共要走 10 步。積木模式可以把「If」積木放進「Repeat」裡，在「Else」放「down」。",
+    "map": [
+      "#########",
+      "#S.*#####",
+      "###.#####",
+      "###..*###",
+      "#####.###",
+      "#####..E#",
+      "#########"
+    ],
+    "solution": "for i in range(10):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()",
+    "challenge": {
+      "without": "for",
+      "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+    }
+  },
+  {
+    "id": "c2-waterfall",
+    "chapter": 2,
+    "title": "瀑布階梯",
+    "concept": "判斷的順序",
+    "brief": "小心岔路！先檢查哪個方向，結果會不一樣喔。",
+    "hint": "起點右邊是死路。這次要先檢查能不能往下：if hero.canMove('down'):，不能才往右。總共 9 步。也可以寫成 if not hero.canMove('down'):。",
+    "map": [
+      "#########",
+      "#S.######",
+      "#.#######",
+      "#*.######",
+      "##..#####",
+      "###.*.E##",
+      "#########"
+    ],
+    "solution": "for i in range(9):\n    if hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveRight()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c2-winding-river",
+    "chapter": 2,
+    "title": "蜿蜒河道",
+    "concept": "多重判斷 elif",
+    "brief": "這次路線會往上繞！依序檢查右邊、下面，都不能走就往上。",
+    "hint": "先寫 if hero.canMove('right'):，再用 elif hero.canMove('down'): 檢查下面，最後 else: 往上走。總共 9 步。",
+    "map": [
+      "#########",
+      "#####*.E#",
+      "#S.#..###",
+      "##..*####",
+      "#########",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c2-landing",
+    "chapter": 2,
+    "title": "樓梯平台",
+    "concept": "分支裡放多個指令",
+    "brief": "這座樓梯每次要往下走 2 格。小心！只往下走 1 格的話，會被旁邊的岔路騙走。",
+    "hint": "else: 下面可以放兩行指令：先 hero.moveDown()，再一次 hero.moveDown()。迴圈要跑 8 次。",
+    "map": [
+      "#########",
+      "#S..#####",
+      "###..####",
+      "###*..###",
+      "#####..##",
+      "#####*.E#",
+      "#########"
+    ],
+    "solution": "for i in range(8):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\n        hero.moveDown()",
+    "challenge": {
+      "without": "for",
+      "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\n        hero.moveDown()"
+    }
+  },
+  {
+    "id": "c2-peek",
+    "chapter": 2,
+    "title": "探頭找能源",
+    "concept": "沒有 else 的 if",
+    "brief": "大路上方有幾條小縫藏著能源，但位置不規則。讓 BIT 每走一步就看看上面！",
+    "hint": "迴圈裡先 hero.moveRight()，接著 if hero.canMove('up'): 往上再往下。if 可以不寫 else，條件不成立就什麼都不做。",
+    "map": [
+      "#########",
+      "#########",
+      "#########",
+      "##*#*##*#",
+      "#S.....E#",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(6):\n    hero.moveRight()\n    if hero.canMove('up'):\n        hero.moveUp()\n        hero.moveDown()",
+    "challenge": {
+      "without": "for",
+      "solution": "while not hero.atGoal():\n    hero.moveRight()\n    if hero.canMove('up'):\n        hero.moveUp()\n        hero.moveDown()"
+    }
+  },
+  {
+    "id": "c2-peek-both",
+    "chapter": 2,
+    "title": "上下探索",
+    "concept": "兩個 if",
+    "brief": "這次能源藏在大路的上面和下面，有時兩邊都有。每走一步，上下都要看一看。",
+    "hint": "向右走一步後，先用一個 if 檢查上面，再用另一個 if 檢查下面。兩個 if 是分開的，不是 elif。",
+    "map": [
+      "#########",
+      "#########",
+      "###*#*###",
+      "#S.....E#",
+      "##*##*#*#",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(6):\n    hero.moveRight()\n    if hero.canMove('up'):\n        hero.moveUp()\n        hero.moveDown()\n    if hero.canMove('down'):\n        hero.moveDown()\n        hero.moveUp()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c2-two-rules",
+    "chapter": 2,
+    "title": "雙段路線",
+    "concept": "兩個迴圈、兩種判斷",
+    "brief": "前半段往右下走，後半段卻要往左下走。一條規則走不完，試試用兩個迴圈！",
+    "hint": "第一個迴圈跑 8 次：能往右就往右，不然往下。第二個迴圈跑 8 次：能往下就往下，不然往左。",
+    "map": [
+      "#########",
+      "#S.*#####",
+      "###....##",
+      "######.*#",
+      "####....#",
+      "#E...####",
+      "#########"
+    ],
+    "solution": "for i in range(8):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\nfor i in range(8):\n    if hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveLeft()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c2-long-river",
+    "chapter": 2,
+    "title": "長河導航",
+    "concept": "不用數步數",
+    "brief": "這條河道又長又彎，數步數太累了！只要規則對，迴圈次數給多一點也沒關係。",
+    "hint": "用「右、下、上」的順序檢查（if / elif / else）。迴圈次數直接寫 20，走進傳送門就會自動停下來。",
+    "map": [
+      "############",
+      "#S.*########",
+      "###.#.*.####",
+      "###...#.####",
+      "#######.#.E#",
+      "#######.*.##",
+      "############",
+      "############"
+    ],
+    "solution": "for i in range(20):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()",
+    "challenge": {
+      "without": "for",
+      "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()"
+    }
+  },
+  {
+    "id": "c2-warehouse",
+    "chapter": 2,
+    "title": "地下倉庫",
+    "concept": "組合技",
+    "brief": "先沿著走道撿上方的能源，再沿著階梯往左下走到出口。把學過的兩招組合起來！",
+    "hint": "第一個迴圈（6 次）：向右一步，上面能走就上去再下來。第二個迴圈（8 次）：能往下就往下，不然往左。",
+    "map": [
+      "#########",
+      "##*#*#*##",
+      "#S......#",
+      "#######.#",
+      "#####.*.#",
+      "##E...###",
+      "#########"
+    ],
+    "solution": "for i in range(6):\n    hero.moveRight()\n    if hero.canMove('up'):\n        hero.moveUp()\n        hero.moveDown()\nfor i in range(8):\n    if hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveLeft()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c2-finale",
+    "chapter": 2,
+    "title": "迷霧守護者",
+    "concept": "判斷裡的判斷",
+    "brief": "往右上爬的階梯，有些台階下方藏著能源。只有往右走之後才需要探頭往下看——if 裡面還可以再放 if！",
+    "hint": "規則：能往右就往右，而且往右之後，下面能走就下去再上來；不能往右就往上。迴圈次數寫 20 就好。",
+    "map": [
+      "###########",
+      "#########E#",
+      "######....#",
+      "######.#*##",
+      "###....####",
+      "###.#*#####",
+      "#S*.#######",
+      "###########"
+    ],
+    "solution": "for i in range(20):\n    if hero.canMove('right'):\n        hero.moveRight()\n        if hero.canMove('down'):\n            hero.moveDown()\n            hero.moveUp()\n    else:\n        hero.moveUp()",
+    "challenge": {
+      "without": "for",
+      "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n        if hero.canMove('down'):\n            hero.moveDown()\n            hero.moveUp()\n    else:\n        hero.moveUp()"
+    }
+  },
+  {
+    "id": "c3-count",
+    "chapter": 3,
+    "title": "少走一步",
+    "concept": "除錯：次數",
+    "brief": "故障工廠的 BIT 程式出錯了！執行看看，觀察它在哪裡撞牆，找出錯的那個數字。",
+    "hint": "BIT 撞牆時，訊息會告訴你是第幾行。往右應該走 5 格，程式裡寫的是幾？",
+    "map": [
+      "#########",
+      "#S.*...##",
+      "######*##",
+      "######.##",
+      "######E##",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(5):\n    hero.moveRight()\nfor i in range(3):\n    hero.moveDown()",
+    "starter": "# 這段程式有 1 個錯誤\nfor i in range(4):\n    hero.moveRight()\nfor i in range(3):\n    hero.moveDown()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nfor i in range(5):\n    hero.moveRight()\nfor i in range(3):\n    hero.moveDown()"
+    }
+  },
+  {
+    "id": "c3-direction",
+    "chapter": 3,
+    "title": "方向錯了",
+    "concept": "除錯：方向",
+    "brief": "BIT 最後走錯方向了。先執行一次，看看它是往哪裡走的。",
+    "hint": "傳送門在右上方，最後一段應該往上走，而不是往下。",
+    "map": [
+      "#########",
+      "#####E###",
+      "#####*###",
+      "#.*...###",
+      "#.#######",
+      "#S#######",
+      "#########"
+    ],
+    "solution": "for i in range(2):\n    hero.moveUp()\nfor i in range(4):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveUp()",
+    "starter": "# 這段程式有 1 個錯誤\nfor i in range(2):\n    hero.moveUp()\nfor i in range(4):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveDown()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nfor i in range(2):\n    hero.moveUp()\nfor i in range(4):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveUp()"
+    }
+  },
+  {
+    "id": "c3-indent",
+    "chapter": 3,
+    "title": "縮排的秘密",
+    "concept": "除錯：縮排",
+    "brief": "程式看起來每個指令都有，但 BIT 還是撞牆了。仔細看每一行前面的空白！",
+    "hint": "縮排決定一行指令在不在迴圈裡面。hero.moveDown() 應該要跟 hero.moveRight() 一起重複。",
+    "map": [
+      "#########",
+      "#S.######",
+      "##*.#####",
+      "###.*####",
+      "####E####",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(3):\n    hero.moveRight()\n    hero.moveDown()",
+    "starter": "# 這段程式有 1 個錯誤\nfor i in range(3):\n    hero.moveRight()\nhero.moveDown()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nfor i in range(3):\n    hero.moveRight()\n    hero.moveDown()"
+    }
+  },
+  {
+    "id": "c3-condition",
+    "chapter": 3,
+    "title": "相反的判斷",
+    "concept": "除錯：條件",
+    "brief": "這段程式檢查了一個方向，卻往另一個方向走。判斷和動作要對得上！",
+    "hint": "if 檢查的方向，應該就是接下來要走的方向。這裡想要「能往右就往右」。",
+    "map": [
+      "#########",
+      "#S.*#####",
+      "###...###",
+      "#####.###",
+      "#####.*E#",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()",
+    "starter": "# 這段程式有 1 個錯誤\nfor i in range(9):\n    if hero.canMove('down'):\n        hero.moveRight()\n    else:\n        hero.moveDown()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nfor i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+    }
+  },
+  {
+    "id": "c3-missing-else",
+    "chapter": 3,
+    "title": "卡住的 BIT",
+    "concept": "除錯：少了 else",
+    "brief": "程式執行完了，BIT 卻停在半路動也不動。它遇到了什麼情況，程式卻沒有告訴它該怎麼做？",
+    "hint": "右邊和下面都不能走時，BIT 需要往上走。在 elif 後面補上 else:，裡面寫 hero.moveUp()。",
+    "map": [
+      "#########",
+      "#########",
+      "###.*.###",
+      "#S..#.###",
+      "#####.*E#",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()",
+    "starter": "# 這段程式有 1 個錯誤\nfor i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()",
+    "challenge": {
+      "edits": 2,
+      "solution": "# 這段程式有 1 個錯誤\nfor i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()"
+    }
+  },
+  {
+    "id": "c3-two-bugs",
+    "chapter": 3,
+    "title": "雙重故障",
+    "concept": "除錯：兩個錯誤",
+    "brief": "這次有 2 個錯誤！修好一個之後再執行一次，看看 BIT 走到哪裡。",
+    "hint": "每一階要向右 3 格、再向上 1 格。檢查裡層迴圈的次數，還有最後一個移動的方向。",
+    "map": [
+      "#########",
+      "#########",
+      "#########",
+      "#######E#",
+      "####.*..#",
+      "#S.*.####",
+      "#########"
+    ],
+    "solution": "for i in range(2):\n    for j in range(3):\n        hero.moveRight()\n    hero.moveUp()",
+    "starter": "# 這段程式有 2 個錯誤\nfor i in range(2):\n    for j in range(2):\n        hero.moveRight()\n    hero.moveDown()",
+    "challenge": {
+      "edits": 2,
+      "solution": "# 這段程式有 2 個錯誤\nfor i in range(2):\n    for j in range(3):\n        hero.moveRight()\n    hero.moveUp()"
+    }
+  },
+  {
+    "id": "c3-peek-return",
+    "chapter": 3,
+    "title": "忘了回來",
+    "concept": "除錯：漏掉指令",
+    "brief": "BIT 探頭撿能源之後，就再也回不到大路了。它少做了什麼？",
+    "hint": "往下撿完能源後，要再往上回到大路。在 if 裡面補上 hero.moveUp()。",
+    "map": [
+      "#########",
+      "#########",
+      "#S.....E#",
+      "##*#*#*##",
+      "#########",
+      "#########",
+      "#########"
+    ],
+    "solution": "for i in range(6):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()\n        hero.moveUp()",
+    "starter": "# 這段程式有 1 個錯誤\nfor i in range(6):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nfor i in range(6):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()\n        hero.moveUp()"
+    }
+  },
+  {
+    "id": "c3-check-order",
+    "chapter": 3,
+    "title": "先看哪裡",
+    "concept": "除錯：判斷順序",
+    "brief": "起點左邊有一條死路。程式先檢查左邊，結果 BIT 一開始就走錯了。",
+    "hint": "這張地圖要先檢查能不能往下，不能才往左。把 if 的條件和兩個動作對調。",
+    "map": [
+      "#########",
+      "######.S#",
+      "#######.#",
+      "######.*#",
+      "####.*.##",
+      "##E..####",
+      "#########"
+    ],
+    "solution": "for i in range(9):\n    if hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveLeft()",
+    "starter": "# 這段程式有 1 個錯誤\nfor i in range(9):\n    if hero.canMove('left'):\n        hero.moveLeft()\n    else:\n        hero.moveDown()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nfor i in range(9):\n    if not hero.canMove('down'):\n        hero.moveLeft()\n    else:\n        hero.moveDown()"
+    }
+  },
+  {
+    "id": "c3-two-phases",
+    "chapter": 3,
+    "title": "兩段式故障",
+    "concept": "除錯：兩個迴圈",
+    "brief": "前半段往下、後半段往上的路線。兩個迴圈各藏了一個錯誤！",
+    "hint": "第一個迴圈要走 7 次才會到底。第二個迴圈不能往右時，應該往上爬，不是往下。",
+    "map": [
+      "#########",
+      "#S.###.E#",
+      "##*###.##",
+      "##..#..##",
+      "###.#*###",
+      "###...###",
+      "#########"
+    ],
+    "solution": "for i in range(7):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\nfor i in range(7):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveUp()",
+    "starter": "# 這段程式有 2 個錯誤\nfor i in range(6):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\nfor i in range(7):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()",
+    "challenge": {
+      "edits": 2,
+      "solution": "# 這段程式有 2 個錯誤\nfor i in range(7):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\nfor i in range(7):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveUp()"
+    }
+  },
+  {
+    "id": "c3-core",
+    "chapter": 3,
+    "title": "工廠核心",
+    "concept": "除錯：最終挑戰",
+    "brief": "工廠核心的程式有 3 個錯誤！一次修一個，每修一個就執行看看，BIT 會告訴你下一個問題在哪。",
+    "hint": "提示：第一個迴圈的次數、探頭之後回來的方向，還有第二個迴圈的判斷順序（應該先看右邊）。",
+    "map": [
+      "############",
+      "#S......####",
+      "##*#*##.####",
+      "#######.#.E#",
+      "#######.*.##",
+      "############",
+      "############",
+      "############"
+    ],
+    "solution": "for i in range(5):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()\n        hero.moveUp()\nfor i in range(10):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()",
+    "starter": "# 這段程式有 3 個錯誤\nfor i in range(4):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()\n        hero.moveDown()\nfor i in range(10):\n    if hero.canMove('down'):\n        hero.moveDown()\n    elif hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveUp()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c4-until-goal",
+    "chapter": 4,
+    "title": "看不見盡頭",
+    "concept": "while 迴圈",
+    "brief": "這條迴廊長得看不見盡頭，數不出要走幾步。換個方法：叫 BIT「還沒到傳送門，就繼續走」！",
+    "hint": "切到指令模式，寫 while not hero.atGoal():，下一行縮排 4 個空白寫 hero.moveRight()。不用數步數，走到傳送門就會停。積木模式可以用「While」積木，條件選「not at the goal」。",
+    "map": [
+      "############",
+      "############",
+      "#S..*...*.E#",
+      "############",
+      "############"
+    ],
+    "solution": "while not hero.atGoal():\n    hero.moveRight()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c4-wall-run",
+    "chapter": 4,
+    "title": "走到底再轉彎",
+    "concept": "while 搭配 canMove",
+    "brief": "每段走道都要走到底才轉彎。while 也可以搭配 hero.canMove()：前面還能走，就一直走。",
+    "hint": "寫三個 while：while hero.canMove('right'): 往右，接著往下，最後往左。每個 while 都會走到撞牆前停下來。",
+    "map": [
+      "#########",
+      "#S...*..#",
+      "#######.#",
+      "#######*#",
+      "#######.#",
+      "#E*.....#",
+      "#########"
+    ],
+    "solution": "while hero.canMove('right'):\n    hero.moveRight()\nwhile hero.canMove('down'):\n    hero.moveDown()\nwhile hero.canMove('left'):\n    hero.moveLeft()",
+    "challenge": {
+      "loops": 2,
+      "solution": "while hero.canMove('right'):\n    hero.moveRight()\nwhile not hero.atGoal():\n    if hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveLeft()"
+    }
+  },
+  {
+    "id": "c4-auto-stairs",
+    "chapter": 4,
+    "title": "自動階梯",
+    "concept": "while 裡面放 if",
+    "brief": "每一階的長度都不一樣。把第 2 章學過的判斷放進 while，讓 BIT 自己走到傳送門。",
+    "hint": "while not hero.atGoal(): 裡面寫 if hero.canMove('right'): 往右，else: 往下。",
+    "map": [
+      "###########",
+      "#S.*#######",
+      "###.#######",
+      "###...*####",
+      "######.####",
+      "######.*.E#",
+      "###########"
+    ],
+    "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c4-peek-while",
+    "chapter": 4,
+    "title": "邊走邊看",
+    "concept": "while 加上探頭",
+    "brief": "沿著走道一直往右，上方的小縫裡藏著能源。走道多長都沒關係，走到底就是傳送門。",
+    "hint": "while hero.canMove('right'): 裡面先往右一步，再用 if hero.canMove('up'): 往上撿能源、再往下回來。",
+    "map": [
+      "##########",
+      "##########",
+      "##*#*##*##",
+      "#S......E#",
+      "##########",
+      "##########"
+    ],
+    "solution": "while hero.canMove('right'):\n    hero.moveRight()\n    if hero.canMove('up'):\n        hero.moveUp()\n        hero.moveDown()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c4-endless-river",
+    "chapter": 4,
+    "title": "無盡河道",
+    "concept": "while 搭配 elif",
+    "brief": "最長的一條河道！不用再猜迴圈要跑幾次，規則對了，BIT 就會一路走到傳送門。",
+    "hint": "while not hero.atGoal(): 裡面依序檢查：能往右就往右，elif 能往下就往下，else 往上。",
+    "map": [
+      "###############",
+      "#S.*###########",
+      "###.#*..#######",
+      "###...#.#######",
+      "#######.#...###",
+      "#######*..#*.E#",
+      "###############"
+    ],
+    "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c4-stuck-loop",
+    "chapter": 4,
+    "title": "停不下來的 BIT",
+    "concept": "除錯：無窮迴圈",
+    "brief": "BIT 走到一半就不動了，迴圈卻一直跑、停不下來。這就是「無窮迴圈」！找出 BIT 卡住時，程式少告訴它什麼。",
+    "hint": "BIT 卡住的地方右邊和下面都不能走，只能往上。在 elif 後面補上 else:，裡面寫 hero.moveUp()。",
+    "map": [
+      "##########",
+      "##########",
+      "####.*.###",
+      "#S*..#.###",
+      "######..E#",
+      "##########"
+    ],
+    "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()",
+    "starter": "# 這段程式有 1 個錯誤\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()",
+    "challenge": {
+      "edits": 2,
+      "solution": "# 這段程式有 1 個錯誤\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()\n    else:\n        hero.moveUp()"
+    }
+  },
+  {
+    "id": "c4-spiral",
+    "chapter": 4,
+    "title": "螺旋迴廊",
+    "concept": "while 裡的 while",
+    "brief": "迴廊一圈一圈往中心繞，每一段都比上一段短。while 裡面還可以再放 while！",
+    "hint": "外層寫 while not hero.atGoal():。裡面放四個 while：能往右就一直往右，接著往下、往左、往上，每個方向都走到底。",
+    "map": [
+      "#########",
+      "#S.....*#",
+      "#######.#",
+      "#*....#.#",
+      "#.###.#.#",
+      "#.#E..#.#",
+      "#.#####.#",
+      "#....*..#",
+      "#########"
+    ],
+    "solution": "while not hero.atGoal():\n    while hero.canMove('right'):\n        hero.moveRight()\n    while hero.canMove('down'):\n        hero.moveDown()\n    while hero.canMove('left'):\n        hero.moveLeft()\n    while hero.canMove('up'):\n        hero.moveUp()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c5-hop",
+    "chapter": 5,
+    "title": "跳石頭",
+    "concept": "def 函式",
+    "brief": "走道上有 3 顆大石頭，每次都要「上、右、右、下」跳過去。同樣的動作寫 3 遍太累了，幫它取個名字吧！",
+    "hint": "切到指令模式，先寫 def hop():，下面縮排寫跳過石頭的 4 個動作。之後只要寫 hop()，BIT 就會跳一次。石頭之間的距離都不一樣。",
+    "map": [
+      "################",
+      "################",
+      "##.*.#.*.##.*.##",
+      "#S.#...#....#.E#",
+      "################",
+      "################",
+      "################"
+    ],
+    "solution": "def hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\nhero.moveRight()\nhop()\nfor i in range(2):\n    hero.moveRight()\nhop()\nfor i in range(3):\n    hero.moveRight()\nhop()\nhero.moveRight()",
+    "challenge": {
+      "statements": 9,
+      "solution": "def hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hop()"
+    }
+  },
+  {
+    "id": "c5-tower",
+    "chapter": 5,
+    "title": "翻越高塔",
+    "concept": "函式裡的迴圈",
+    "brief": "這次要翻過 3 座高塔：爬上去、走過塔頂、再爬下來。函式裡面也可以放迴圈！",
+    "hint": "def tower(): 裡面用 3 個迴圈：往上 3 次、往右 2 次、往下 3 次。塔和塔之間的距離不一樣，記得在呼叫之間走過去。",
+    "map": [
+      "################",
+      "################",
+      "##.*.#.*.##.*.##",
+      "##.#.#.#.##.#.##",
+      "##.#.#.#.##.#.##",
+      "#S.#...#....#.E#",
+      "################"
+    ],
+    "solution": "def tower():\n    for i in range(3):\n        hero.moveUp()\n    for i in range(2):\n        hero.moveRight()\n    for i in range(3):\n        hero.moveDown()\n\nhero.moveRight()\ntower()\nfor i in range(2):\n    hero.moveRight()\ntower()\nfor i in range(3):\n    hero.moveRight()\ntower()\nhero.moveRight()",
+    "challenge": {
+      "statements": 11,
+      "solution": "def tower():\n    for i in range(3):\n        hero.moveUp()\n    for i in range(2):\n        hero.moveRight()\n    for i in range(3):\n        hero.moveDown()\n\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        tower()"
+    }
+  },
+  {
+    "id": "c5-two-funcs",
+    "chapter": 5,
+    "title": "上上下下",
+    "concept": "兩個函式",
+    "brief": "山路一下往上、一下往下，沒有固定的順序。定義兩個函式，一個上坡、一個下坡，再照順序呼叫。",
+    "hint": "def up(): 往上 1 步、往右 2 步；def down(): 往下 1 步、往右 2 步。順序是：上、上、下、上、下、下。",
+    "map": [
+      "################",
+      "###...#..*######",
+      "#..*#..*#...####",
+      "#S#########*.E##",
+      "################",
+      "################"
+    ],
+    "solution": "def up():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\ndef down():\n    hero.moveDown()\n    hero.moveRight()\n    hero.moveRight()\n\nup()\nup()\ndown()\nup()\ndown()\ndown()",
+    "challenge": {
+      "statements": 12,
+      "solution": "def up():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\ndef down():\n    hero.moveDown()\n    hero.moveRight()\n    hero.moveRight()\n\nwhile not hero.atGoal():\n    if hero.canMove('up'):\n        up()\n    else:\n        down()"
+    }
+  },
+  {
+    "id": "c5-call-in-loop",
+    "chapter": 5,
+    "title": "階梯工廠",
+    "concept": "迴圈裡呼叫函式",
+    "brief": "兩組一樣的階梯，中間隔著一段下坡。把一階寫成函式，再放進迴圈裡呼叫。",
+    "hint": "def step(): 往右 2 步、往上 2 步。先 for 迴圈呼叫 step() 2 次，往右 2 步、往下 4 步，再呼叫 2 次。",
+    "map": [
+      "##############",
+      "#####*..###E##",
+      "#####.#.###.##",
+      "###...#.#..*##",
+      "###.###.#.####",
+      "#S.*###*..####",
+      "##############"
+    ],
+    "solution": "def step():\n    for i in range(2):\n        hero.moveRight()\n    for i in range(2):\n        hero.moveUp()\n\nfor i in range(2):\n    step()\nfor i in range(2):\n    hero.moveRight()\nfor i in range(4):\n    hero.moveDown()\nfor i in range(2):\n    step()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c5-forgot-call",
+    "chapter": 5,
+    "title": "漏跳一次",
+    "concept": "除錯：忘了呼叫",
+    "brief": "hop() 函式寫得沒錯，BIT 卻撞上了石頭。看看是哪一顆石頭前面，程式忘了叫 BIT 跳？",
+    "hint": "函式定義好之後，要呼叫才會執行。數數看地圖上有幾顆石頭、程式裡寫了幾次 hop()。",
+    "map": [
+      "#################",
+      "#################",
+      "###.*.##.*.#.*.##",
+      "#S..#....#...#.E#",
+      "#################",
+      "#################",
+      "#################"
+    ],
+    "solution": "def hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\nfor i in range(2):\n    hero.moveRight()\nhop()\nfor i in range(3):\n    hero.moveRight()\nhop()\nfor i in range(2):\n    hero.moveRight()\nhop()\nhero.moveRight()",
+    "starter": "# 這段程式有 1 個錯誤\ndef hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\nfor i in range(2):\n    hero.moveRight()\nhop()\nfor i in range(3):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveRight()\nhop()\nhero.moveRight()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\ndef hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\nfor i in range(2):\n    hero.moveRight()\nhop()\nfor i in range(3):\n    hero.moveRight()\nhop()\nfor i in range(2):\n    hero.moveRight()\nhop()\nhero.moveRight()"
+    }
+  },
+  {
+    "id": "c5-patrol",
+    "chapter": 5,
+    "title": "雙層巡邏",
+    "concept": "函式裡的 while",
+    "brief": "上下兩條走道，上方都藏著能源。巡邏的方法一模一樣，寫成一個函式就能用兩次。",
+    "hint": "def patrol(): 裡面寫 while hero.canMove('right'):，每走一步就用 if 檢查上面。呼叫 patrol()，往下 2 步，再呼叫一次。",
+    "map": [
+      "##############",
+      "##*#*#########",
+      "#S.....#######",
+      "######.##*#*##",
+      "######......E#",
+      "##############"
+    ],
+    "solution": "def patrol():\n    while hero.canMove('right'):\n        hero.moveRight()\n        if hero.canMove('up'):\n            hero.moveUp()\n            hero.moveDown()\n\npatrol()\nhero.moveDown()\nhero.moveDown()\npatrol()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c5-define-first",
+    "chapter": 5,
+    "title": "還不認識的指令",
+    "concept": "除錯：先定義再呼叫",
+    "brief": "BIT 一開始就說它不知道 climb() 是什麼。程式明明有寫 def climb():，問題出在哪？",
+    "hint": "Python 由上往下執行。執行到 climb() 時，下面的 def 還沒跑到。把 def climb(): 整段搬到最上面。",
+    "map": [
+      "#########",
+      "######E##",
+      "#####.*##",
+      "###.*.###",
+      "##*.#####",
+      "#S.######",
+      "#########"
+    ],
+    "solution": "def climb():\n    for i in range(2):\n        hero.moveRight()\n        hero.moveUp()\n\nclimb()\nhero.moveRight()\nclimb()",
+    "starter": "# 這段程式有 1 個錯誤\nclimb()\nhero.moveRight()\nclimb()\n\ndef climb():\n    for i in range(2):\n        hero.moveRight()\n        hero.moveUp()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c5-workshop",
+    "chapter": 5,
+    "title": "工坊大道",
+    "concept": "組合多個函式",
+    "brief": "工坊大道上有石頭要跳，也有地洞藏著能源。找出重複的動作，自己決定要定義哪些函式！",
+    "hint": "跳石頭用 hop()：上、右、右、下。撿地洞的能源用 dip()：往下再往上。照著地圖依序呼叫，中間記得往右走。",
+    "map": [
+      "#################",
+      "#################",
+      "###.*.##...#.*.##",
+      "#S..#....#...#.E#",
+      "##*###*###*######",
+      "#################",
+      "#################"
+    ],
+    "solution": "def hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\ndef dip():\n    hero.moveDown()\n    hero.moveUp()\n\nhero.moveRight()\ndip()\nhero.moveRight()\nhop()\nhero.moveRight()\ndip()\nfor i in range(2):\n    hero.moveRight()\nhop()\ndip()\nfor i in range(2):\n    hero.moveRight()\nhop()\nhero.moveRight()",
+    "challenge": {
+      "statements": 14,
+      "solution": "def hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\ndef dip():\n    hero.moveDown()\n    hero.moveUp()\n\nwhile not hero.atGoal():\n    if hero.canMove('down'):\n        dip()\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hop()"
+    }
+  },
+  {
+    "id": "c6-steps",
+    "chapter": 6,
+    "title": "長短階梯",
+    "concept": "第一個參數",
+    "brief": "每一階都是「往右走幾步、再往下一步」，只是步數不一樣。用一個有參數的函式，把步數交給呼叫的人決定！",
+    "hint": "def step(n): 裡面寫 for i in range(n): 往右走，再往下一步。然後依序呼叫 step(3)、step(1)、step(4)、step(2)。",
+    "map": [
+      "#############",
+      "#S..*########",
+      "####..#######",
+      "#####...*.###",
+      "#########...#",
+      "###########E#",
+      "#############"
+    ],
+    "solution": "def step(n):\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n\nstep(3)\nstep(1)\nstep(4)\nstep(2)",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c6-hills",
+    "chapter": 6,
+    "title": "高低山丘",
+    "concept": "參數控制高度",
+    "brief": "三座山的高度都不一樣，山頂各有一顆能源。爬山的動作一樣，只差在要爬幾格。",
+    "hint": "def hill(h): 先往上 h 格、往右一格、再往下 h 格，最後往右兩格走到下一座山。呼叫 hill(2)、hill(4)、hill(3)。",
+    "map": [
+      "############",
+      "####*.######",
+      "####..#*.###",
+      "#*.#..#..###",
+      "#..#..#..###",
+      "#S........E#",
+      "############"
+    ],
+    "solution": "def hill(h):\n    for i in range(h):\n        hero.moveUp()\n    hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n    hero.moveRight()\n    hero.moveRight()\n\nhill(2)\nhill(4)\nhill(3)",
+    "challenge": {
+      "moves": 4,
+      "solution": "def hill(h):\n    for i in range(h):\n        hero.moveUp()\n    hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n    for i in range(2):\n        hero.moveRight()\n\nhill(2)\nhill(4)\nhill(3)"
+    }
+  },
+  {
+    "id": "c6-wrong-number",
+    "chapter": 6,
+    "title": "數字給錯了",
+    "concept": "除錯：參數的數字",
+    "brief": "step() 寫得沒問題，可是 BIT 走到一半就撞牆了。對照地圖，看看哪一次呼叫的數字給錯了。",
+    "hint": "每一階往右走的步數分別是 2、3、1、3、2。逐一對照每一行 step() 括號裡的數字。",
+    "map": [
+      "##############",
+      "#S..##########",
+      "###...*#######",
+      "######..######",
+      "#######....###",
+      "##########*..#",
+      "############E#",
+      "##############"
+    ],
+    "solution": "def step(n):\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n\nstep(2)\nstep(3)\nstep(1)\nstep(3)\nstep(2)",
+    "starter": "# 這段程式有 1 個錯誤\ndef step(n):\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n\nstep(2)\nstep(3)\nstep(2)\nstep(3)\nstep(2)",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\ndef step(n):\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n\nstep(2)\nstep(3)\nstep(1)\nstep(3)\nstep(2)"
+    }
+  },
+  {
+    "id": "c6-two-params",
+    "chapter": 6,
+    "title": "寬寬窄窄",
+    "concept": "兩個參數",
+    "brief": "這座階梯每一階的寬度和高度都不同。函式可以有兩個參數，用逗號隔開。",
+    "hint": "def stair(w, h): 先往右走 w 步，再往下走 h 步。呼叫時也用逗號分開，例如 stair(3, 1)。",
+    "map": [
+      "##############",
+      "#S...#########",
+      "####*.########",
+      "#####.########",
+      "#####.########",
+      "#####..*######",
+      "#######.######",
+      "#######.....##",
+      "###########..#",
+      "############.#",
+      "############E#",
+      "##############"
+    ],
+    "solution": "def stair(w, h):\n    for i in range(w):\n        hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n\nstair(3, 1)\nstair(1, 3)\nstair(2, 2)\nstair(4, 1)\nstair(1, 2)",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c6-hardcoded",
+    "chapter": 6,
+    "title": "寫死的數字",
+    "concept": "除錯：忘了用參數",
+    "brief": "每口礦井深度不同，底部都有能源。dig(n) 明明有參數 n，BIT 卻每次都挖一樣深。",
+    "hint": "函式裡的 range() 應該用參數 n，而不是寫死的數字。兩個 for 都要檢查。",
+    "map": [
+      "###########",
+      "#S.......E#",
+      "##*#.#.#.##",
+      "####.#*#.##",
+      "####*###*##",
+      "###########"
+    ],
+    "solution": "def dig(n):\n    for i in range(n):\n        hero.moveDown()\n    for i in range(n):\n        hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\nhero.moveRight()\ndig(1)\ndig(3)\ndig(2)\ndig(3)",
+    "starter": "# 這段程式有 2 個錯誤\ndef dig(n):\n    for i in range(2):\n        hero.moveDown()\n    for i in range(2):\n        hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\nhero.moveRight()\ndig(1)\ndig(3)\ndig(2)\ndig(3)",
+    "challenge": {
+      "edits": 2,
+      "solution": "# 這段程式有 2 個錯誤\ndef dig(n):\n    for i in range(n):\n        hero.moveDown()\n    for i in range(n):\n        hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\nhero.moveRight()\ndig(1)\ndig(3)\ndig(2)\ndig(3)"
+    }
+  },
+  {
+    "id": "c6-pass-along",
+    "chapter": 6,
+    "title": "方塊山",
+    "concept": "把參數傳給另一個函式",
+    "brief": "方塊山有多高，山頂就有多寬。平地和山頂都是「往右走幾步」，可以共用同一個函式。",
+    "hint": "def run(n): 往右走 n 步。def block(n): 往上 n 步，呼叫 run(n) 走過山頂，再往下 n 步。函式裡呼叫 run(n)，就是把自己的參數傳下去。",
+    "map": [
+      "###################",
+      "#######*...########",
+      "###*..#.##.##*..###",
+      "###.#.#.##.##.#.###",
+      "#S..#...##....#..E#",
+      "###################"
+    ],
+    "solution": "def run(n):\n    for i in range(n):\n        hero.moveRight()\n\ndef block(n):\n    for i in range(n):\n        hero.moveUp()\n    run(n)\n    for i in range(n):\n        hero.moveDown()\n\nrun(2)\nblock(2)\nrun(2)\nblock(3)\nrun(3)\nblock(2)\nrun(2)",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c6-arg-order",
+    "chapter": 6,
+    "title": "順序很重要",
+    "concept": "除錯：參數的個數和順序",
+    "brief": "這段程式有兩個地方呼叫 stair() 時出錯：一個少給了數字，一個把寬和高的順序弄反了。",
+    "hint": "stair(w, h) 第一個數字是寬（往右），第二個是高（往下）。每一次呼叫都要給兩個數字，順序和 def 一樣。",
+    "map": [
+      "#############",
+      "#S..*########",
+      "####..#######",
+      "#####.#######",
+      "#####*#######",
+      "#####...#####",
+      "#######.#####",
+      "#######*.####",
+      "########....#",
+      "###########.#",
+      "###########E#",
+      "#############"
+    ],
+    "solution": "def stair(w, h):\n    for i in range(w):\n        hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n\nstair(3, 1)\nstair(1, 3)\nstair(2, 2)\nstair(1, 1)\nstair(3, 2)",
+    "starter": "# 這段程式有 2 個錯誤\ndef stair(w, h):\n    for i in range(w):\n        hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n\nstair(3, 1)\nstair(3, 1)\nstair(2, 2)\nstair(1)\nstair(3, 2)",
+    "challenge": {
+      "edits": 2,
+      "solution": "# 這段程式有 2 個錯誤\ndef stair(w, h):\n    for i in range(w):\n        hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n\nstair(3, 1)\nstair(1, 3)\nstair(2, 2)\nstair(1, 1)\nstair(3, 2)"
+    }
+  },
+  {
+    "id": "c6-gear-road",
+    "chapter": 6,
+    "title": "齒輪大道",
+    "concept": "組合有參數的函式",
+    "brief": "齒輪大道上有高低不同的山，也有深淺不同的礦井，每個山頂和井底都有能源。用兩個有參數的函式走完全程！",
+    "hint": "hill(h) 爬上 h 格、往右、爬下 h 格；dig(d) 往下 d 格再回來。兩個函式最後都往右走兩步，接到下一段。",
+    "map": [
+      "###################",
+      "##############*.###",
+      "####*.########..###",
+      "####..###*.###..###",
+      "####..###..###..###",
+      "#S...............E#",
+      "##.####.####*######",
+      "##*####.###########",
+      "#######*###########",
+      "###################"
+    ],
+    "solution": "def hill(h):\n    for i in range(h):\n        hero.moveUp()\n    hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n    hero.moveRight()\n    hero.moveRight()\n\ndef dig(d):\n    for i in range(d):\n        hero.moveDown()\n    for i in range(d):\n        hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\nhero.moveRight()\ndig(2)\nhill(3)\ndig(3)\nhill(2)\ndig(1)\nhill(4)",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c7-grow",
+    "chapter": 7,
+    "title": "越走越長",
+    "concept": "第一個變數",
+    "brief": "每一階都比上一階多走一步：1、2、3、4。用變數 n 記住這一階要走幾步，每走完一階就把 n 加 1。",
+    "hint": "先寫 n = 1。迴圈裡往右走 range(n) 步、往下一步，最後寫 n += 1，下一階就會多走一步。",
+    "map": [
+      "#############",
+      "#S.##########",
+      "##.*.########",
+      "####....#####",
+      "#######..*..#",
+      "###########E#",
+      "#############"
+    ],
+    "solution": "n = 1\nfor i in range(4):\n    for j in range(n):\n        hero.moveRight()\n    hero.moveDown()\n    n += 1",
+    "challenge": {
+      "without": "for",
+      "solution": "n = 1\nwhile not hero.atGoal():\n    k = 0\n    while k < n:\n        hero.moveRight()\n        k += 1\n    hero.moveDown()\n    n += 1"
+    }
+  },
+  {
+    "id": "c7-first-key",
+    "chapter": 7,
+    "title": "第一把鑰匙",
+    "concept": "鑰匙和門",
+    "brief": "門鎖著！每扇門前的通道裡都有一把鑰匙，通道一個比一個深。BIT 撿到鑰匙，就能打開一扇門。",
+    "hint": "通道深度是 1、2、3。用 n 記住深度：往上走 n 步拿鑰匙，再往下走 n 步回來，往右兩步穿過門，最後 n += 1。",
+    "map": [
+      "#########",
+      "#####K###",
+      "###K#*###",
+      "#K#.#.###",
+      "#SD.D.DE#",
+      "#########"
+    ],
+    "solution": "n = 1\nfor i in range(3):\n    for j in range(n):\n        hero.moveUp()\n    for j in range(n):\n        hero.moveDown()\n    hero.moveRight()\n    hero.moveRight()\n    n += 1",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c7-forgot-add",
+    "chapter": 7,
+    "title": "忘了加一",
+    "concept": "除錯：變數沒有改變",
+    "brief": "每一階應該比上一階多走一步，可是 BIT 每一階都只走兩步，第二階就撞牆了。程式少了什麼？",
+    "hint": "n 一直都是 2，因為沒有任何一行改變它。在迴圈的最後加上 n += 1，記得和 hero.moveDown() 對齊。",
+    "map": [
+      "############",
+      "#S..########",
+      "###...*#####",
+      "######...*.#",
+      "##########E#",
+      "############"
+    ],
+    "solution": "n = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveRight()\n    hero.moveDown()\n    n += 1",
+    "starter": "# 這段程式有 1 個錯誤\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveRight()\n    hero.moveDown()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveRight()\n    hero.moveDown()\n    n += 1"
+    }
+  },
+  {
+    "id": "c7-countdown",
+    "chapter": 7,
+    "title": "越走越短",
+    "concept": "倒數和比較",
+    "brief": "這次階梯越來越短：4、3、2、1。讓 n 每次減 1，用 while n > 0: 一直走到 n 變成 0 為止。",
+    "hint": "n = 4 開始。迴圈裡往右走 n 步、往下一步，再寫 n -= 1。n 變成 0 時 n > 0 不成立，迴圈就停了。",
+    "map": [
+      "#############",
+      "#S.*..#######",
+      "#####..*.####",
+      "########...##",
+      "##########..#",
+      "###########E#",
+      "#############"
+    ],
+    "solution": "n = 4\nwhile n > 0:\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n    n -= 1",
+    "challenge": {
+      "without": "for",
+      "solution": "n = 4\nwhile n > 0:\n    k = n\n    while k > 0:\n        hero.moveRight()\n        k -= 1\n    hero.moveDown()\n    n -= 1"
+    }
+  },
+  {
+    "id": "c7-wrong-indent",
+    "chapter": 7,
+    "title": "加錯地方",
+    "concept": "除錯：n += 1 的位置",
+    "brief": "井一口比一口深，井底都有鑰匙。這段程式讓 BIT 挖第二口井時挖過頭，撞到了井底。",
+    "hint": "n += 1 要在每走完一口井之後做一次，所以要和外層迴圈裡的 for 對齊，不能縮排在 hero.moveUp() 下面。",
+    "map": [
+      "############",
+      "#S.D..D..DE#",
+      "#.##.##.####",
+      "#K##.##*####",
+      "####K##.####",
+      "#######K####",
+      "############"
+    ],
+    "solution": "n = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveDown()\n    for j in range(n):\n        hero.moveUp()\n    for j in range(3):\n        hero.moveRight()\n    n += 1",
+    "starter": "# 這段程式有 1 個錯誤\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveDown()\n    for j in range(n):\n        hero.moveUp()\n        n += 1\n    for j in range(3):\n        hero.moveRight()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveDown()\n    for j in range(n):\n        hero.moveUp()\n    n += 1\n    for j in range(3):\n        hero.moveRight()"
+    }
+  },
+  {
+    "id": "c7-double",
+    "chapter": 7,
+    "title": "越跳越遠",
+    "concept": "變成兩倍",
+    "brief": "每一階的長度都是上一階的兩倍：1、2、4、8。n = n + n 會把 n 變成原來的兩倍。",
+    "hint": "n = 1 開始。while not hero.atGoal(): 裡往右走 n 步、往下一步，再寫 n = n + n。",
+    "map": [
+      "##################",
+      "#S.###############",
+      "##.*.#############",
+      "####..*..#########",
+      "########....*....#",
+      "################E#",
+      "##################"
+    ],
+    "solution": "n = 1\nwhile not hero.atGoal():\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n    n = n + n",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c7-key-first",
+    "chapter": 7,
+    "title": "先拿鑰匙",
+    "concept": "除錯：順序和倒數",
+    "brief": "BIT 一出發就卡在鎖著的門前。這段程式有兩個錯誤：一個是順序，一個會讓迴圈停不下來。",
+    "hint": "要先往左拿鑰匙、走回來，才能往下開門。岔路一條比一條短，所以最後應該是 n -= 1，n 變成 0 時迴圈才會停。",
+    "map": [
+      "######",
+      "#K..S#",
+      "####D#",
+      "##K.*#",
+      "####D#",
+      "###K.#",
+      "####D#",
+      "####E#",
+      "######"
+    ],
+    "solution": "n = 3\nwhile n > 0:\n    for i in range(n):\n        hero.moveLeft()\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n    hero.moveDown()\n    n -= 1",
+    "starter": "# 這段程式有 2 個錯誤\nn = 3\nwhile n > 0:\n    hero.moveDown()\n    hero.moveDown()\n    for i in range(n):\n        hero.moveLeft()\n    for i in range(n):\n        hero.moveRight()\n    n += 1",
+    "challenge": {
+      "edits": 3,
+      "solution": "n = 3\nwhile n > 0:\n    for i in range(n):\n        hero.moveLeft()\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n    hero.moveDown()\n    n -= 1"
+    }
+  },
+  {
+    "id": "c7-vault",
+    "chapter": 7,
+    "title": "寶庫深處",
+    "concept": "綜合：變數、while 和鑰匙",
+    "brief": "寶庫的階梯一階比一階長，每一階的盡頭上方都有一把鑰匙，下方是鎖著的門。最後一階的上方是能源。",
+    "hint": "用 while not hero.atGoal(): 一直走。每一圈往右走 n 步、往上拿鑰匙、往下兩步穿過門，再 n += 1。",
+    "map": [
+      "#############",
+      "##K##########",
+      "#S.#K########",
+      "##D..##K#####",
+      "####D...###*#",
+      "#######D....#",
+      "###########E#",
+      "#############"
+    ],
+    "solution": "n = 1\nwhile not hero.atGoal():\n    for i in range(n):\n        hero.moveRight()\n    hero.moveUp()\n    hero.moveDown()\n    hero.moveDown()\n    n += 1",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c8-wait",
+    "chapter": 8,
+    "title": "等一下再走",
+    "concept": "hero.wait() 等待",
+    "brief": "巡邏機器人在路口上下走動，BIT 不能走進它所在的格子。用 hero.wait() 讓 BIT 原地等一步，等它走開再過去。",
+    "hint": "先走兩步到路口前面，看看守衛在哪裡。它擋在路口時，寫 hero.wait() 等一步，再一路往右走。",
+    "map": [
+      "#########",
+      "####.####",
+      "#S.*...E#",
+      "####V####",
+      "#########"
+    ],
+    "solution": "hero.moveRight()\nhero.moveRight()\nhero.wait()\nfor i in range(4):\n    hero.moveRight()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c8-watch",
+    "chapter": 8,
+    "title": "看準時機",
+    "concept": "if 搭配等待",
+    "brief": "三個守衛守著三個路口，每個時間都不一樣。與其一個一個算，不如讓 BIT 自己看：能往右就走，不能就等。",
+    "hint": "while not hero.atGoal(): 裡面放 if hero.canMove('right'): 往右走，else: hero.wait()。",
+    "map": [
+      "#############",
+      "###.##V##.###",
+      "#S..*....*.E#",
+      "###V##.##V###",
+      "#############"
+    ],
+    "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.wait()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c8-switch",
+    "chapter": 8,
+    "title": "踩下開關",
+    "concept": "開關和閘門",
+    "brief": "往右的路被閘門擋住了。地圖上有一個發光的開關，踩上去，所有閘門都會打開。",
+    "hint": "先往下走 3 步踩開關，再走回來，閘門打開後一路往右。三段都可以用 for 迴圈。",
+    "map": [
+      "##########",
+      "#S.*X...E#",
+      "#.########",
+      "#.########",
+      "#O########",
+      "##########"
+    ],
+    "solution": "for i in range(3):\n    hero.moveDown()\nfor i in range(3):\n    hero.moveUp()\nfor i in range(7):\n    hero.moveRight()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c8-gate-guard",
+    "chapter": 8,
+    "title": "閘門後的守衛",
+    "concept": "開關、閘門和守衛",
+    "brief": "開關在走廊的最右邊，閘門在下面那條路的入口，閘門後面還有守衛在巡邏。先去開門，回來再看準時機通過。",
+    "hint": "往右 8 步踩開關，往左 8 步回來，往下 2 步穿過閘門。最後一段用 while 加上 if：能往右就走，不能就等。",
+    "map": [
+      "############",
+      "#S.*.....O.#",
+      "#.##########",
+      "#X..V...*.E#",
+      "####.#######",
+      "############"
+    ],
+    "solution": "for i in range(8):\n    hero.moveRight()\nfor i in range(8):\n    hero.moveLeft()\nfor i in range(2):\n    hero.moveDown()\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.wait()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c8-impatient",
+    "chapter": 8,
+    "title": "太心急了",
+    "concept": "除錯：等待",
+    "brief": "BIT 的程式在路口不肯等，結果撞上了牆。執行看看，找出不該轉彎的那一行。",
+    "hint": "被守衛擋住的時候，BIT 應該原地等，而不是往下走。把那一行改成 hero.wait()。",
+    "map": [
+      "#############",
+      "##V.##.#V####",
+      "#S..*..*...E#",
+      "###.##V######",
+      "#############"
+    ],
+    "solution": "while not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.wait()",
+    "starter": "# 這段程式有 1 個錯誤\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.wait()"
+    }
+  },
+  {
+    "id": "c8-core",
+    "chapter": 8,
+    "title": "機關核心",
+    "concept": "綜合：等待、開關和迴圈",
+    "brief": "最後的機關核心！上面的走廊有兩個守衛，盡頭是開關；下面那條路有閘門和另一個守衛，傳送門在最左邊。",
+    "hint": "往右 10 格：每一格都先 while not hero.canMove('right'): hero.wait()，再往右走。踩到開關後往下 3 格，最後一段往左，能走就走、不能就等。",
+    "map": [
+      "#############",
+      "#####.##.####",
+      "#S..*V..V.*O#",
+      "#####.##.##.#",
+      "###V#######.#",
+      "#E....X.....#",
+      "###.#########",
+      "#############"
+    ],
+    "solution": "for i in range(10):\n    while not hero.canMove('right'):\n        hero.wait()\n    hero.moveRight()\nfor i in range(3):\n    hero.moveDown()\nwhile not hero.atGoal():\n    if hero.canMove('left'):\n        hero.moveLeft()\n    else:\n        hero.wait()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c9-first-bug",
+    "chapter": 9,
+    "title": "第一隻 bug",
+    "concept": "攻擊 attack",
+    "brief": "島上的 bug 擋住了路！走到 bug 旁邊，用 hero.attack('right') 把它修好，再前往傳送門。",
+    "hint": "先往右走 1 格，bug 就在右邊。寫 hero.attack('right') 攻擊一次就能修好小 bug，接著往右走 4 格。站在 bug 旁邊時，它每一步都會咬你一口。",
+    "map": [
+      "########",
+      "#S.b.*E#",
+      "########"
+    ],
+    "solution": "hero.moveRight()\nhero.attack('right')\nfor i in range(4):\n    hero.moveRight()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c9-big-bug",
+    "chapter": 9,
+    "title": "大 bug 要打三下",
+    "concept": "重複攻擊",
+    "brief": "大 bug 比較硬，要攻擊 3 次才會修好，而且咬人更痛。用迴圈連續攻擊吧！",
+    "hint": "往右走 2 格到大 bug 旁邊，用 for i in range(3): 攻擊 3 次，再往右走 4 格。注意畫面上方的血量。",
+    "map": [
+      "#########",
+      "#S..B.*E#",
+      "#########"
+    ],
+    "solution": "for i in range(2):\n    hero.moveRight()\nfor i in range(3):\n    hero.attack('right')\nfor i in range(4):\n    hero.moveRight()",
+    "challenge": {
+      "moves": 3
+    }
+  },
+  {
+    "id": "c9-bug-row",
+    "chapter": 9,
+    "title": "一排小 bug",
+    "concept": "找出重複的模式",
+    "brief": "走廊上每隔一格就有一隻小 bug。找出「走、攻擊、走」的規律，用迴圈一次解決。",
+    "hint": "每隻 bug 都是：往右走 1 格、攻擊右邊、再往右走 1 格。把這 3 行放進 for i in range(3):，最後再往右走 2 格。",
+    "map": [
+      "###########",
+      "#S.b.b.b.E#",
+      "###########"
+    ],
+    "solution": "for i in range(3):\n    hero.moveRight()\n    hero.attack('right')\n    hero.moveRight()\nfor i in range(2):\n    hero.moveRight()",
+    "challenge": {
+      "statements": 6
+    }
+  },
+  {
+    "id": "c9-look-first",
+    "chapter": 9,
+    "title": "先看再出手",
+    "concept": "條件判斷 enemyAt",
+    "brief": "bug 躲在走廊的哪裡不一定。用 if hero.enemyAt('right'): 先看看右邊有沒有 bug，有就攻擊，沒有就前進。",
+    "hint": "for i in range(14): 裡面寫 if hero.enemyAt('right'):，縮排後攻擊右邊；else: 底下往右走。攻擊和走路都算一步，總共 14 步。",
+    "map": [
+      "#############",
+      "#S.b..b.bb.E#",
+      "#############"
+    ],
+    "solution": "for i in range(14):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    else:\n        hero.moveRight()",
+    "challenge": {
+      "moves": 2,
+      "solution": "for i in range(14):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    else:\n        hero.moveRight()"
+    }
+  },
+  {
+    "id": "c9-corner-bugs",
+    "chapter": 9,
+    "title": "轉角的 bug",
+    "concept": "elif 多種情況",
+    "brief": "路會轉彎，bug 可能在右邊也可能在下面。用 if、elif、else 一次處理好所有情況。",
+    "hint": "順序很重要：先檢查右邊有沒有 bug，再檢查下面有沒有 bug，接著右邊能走就往右，不然往下。總共 13 步。",
+    "map": [
+      "#########",
+      "#S.b#####",
+      "###.#####",
+      "###b..b##",
+      "######.##",
+      "######.E#",
+      "#########"
+    ],
+    "solution": "for i in range(13):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    elif hero.enemyAt('down'):\n        hero.attack('down')\n    elif hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c9-wrong-way",
+    "chapter": 9,
+    "title": "打錯方向",
+    "concept": "除錯：攻擊方向",
+    "brief": "這段程式攻擊的方向不對，BIT 對著牆壁揮空了！執行看看，找出錯誤並修好它。",
+    "hint": "bug 在 BIT 的下面，不是右邊。看看訊息說是第幾行出錯，把那一行的方向改對。",
+    "map": [
+      "#####",
+      "#S###",
+      "#.###",
+      "#.###",
+      "#b###",
+      "#..E#",
+      "#####"
+    ],
+    "solution": "for i in range(2):\n    hero.moveDown()\nhero.attack('down')\nfor i in range(2):\n    hero.moveDown()\nfor i in range(2):\n    hero.moveRight()",
+    "starter": "# 這段程式有 1 個錯誤\nfor i in range(2):\n    hero.moveDown()\nhero.attack('right')\nfor i in range(2):\n    hero.moveDown()\nfor i in range(2):\n    hero.moveRight()",
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nfor i in range(2):\n    hero.moveDown()\nhero.attack('down')\nfor i in range(2):\n    hero.moveDown()\nfor i in range(2):\n    hero.moveRight()"
+    }
+  },
+  {
+    "id": "c9-low-health",
+    "chapter": 9,
+    "title": "血量快不夠了",
+    "concept": "比較 hero.health",
+    "brief": "這條路上的 bug 太多，BIT 的血量撐不到終點。先撿起修復包，血量變低時用 hero.heal() 補血。",
+    "hint": "在迴圈最前面加上 if hero.health < 3: hero.heal()，接著 elif 檢查右邊有沒有 bug，最後 else 往右走。總共 18 步。",
+    "map": [
+      "#############",
+      "#S+.B.bbbb.E#",
+      "#############"
+    ],
+    "solution": "for i in range(18):\n    if hero.health < 3:\n        hero.heal()\n    elif hero.enemyAt('right'):\n        hero.attack('right')\n    else:\n        hero.moveRight()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c9-bug-nest",
+    "chapter": 9,
+    "title": "Bug 巢穴",
+    "concept": "綜合：作戰計畫",
+    "brief": "Bug 島的最深處有兩隻大 bug 守著。撿起修復包，算好什麼時候補血，修好所有 bug 再回到傳送門。",
+    "hint": "先往右走 3 格撿修復包，攻擊大 bug 3 次後馬上補血。接著繞到下面那一排，往左修好另一隻大 bug 和小 bug，再走到傳送門。",
+    "map": [
+      "##########",
+      "#S.+.B..*#",
+      "########.#",
+      "#E..b.B..#",
+      "##########"
+    ],
+    "solution": "for i in range(3):\n    hero.moveRight()\nfor i in range(3):\n    hero.attack('right')\nhero.heal()\nfor i in range(4):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveDown()\nhero.moveLeft()\nfor i in range(3):\n    hero.attack('left')\nfor i in range(2):\n    hero.moveLeft()\nhero.attack('left')\nfor i in range(4):\n    hero.moveLeft()",
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c10-armored",
+    "chapter": 10,
+    "title": "裝甲 bug",
+    "concept": "攻擊減去防禦",
+    "brief": "裝甲 bug 有 1 點防禦，扳手每下只扣 1 點血。點右上角的扳手圖示打開裝備工坊，用齒輪買一把電磁槌吧！",
+    "hint": "傷害 = 攻擊 − 防禦。電磁槌攻擊 3，打裝甲 bug 每下扣 2，兩下就修好。用 for 迴圈加上 if hero.enemyAt('right')，有 bug 就攻擊，沒有就往右走，總共 10 步。",
+    "map": [
+      "#########",
+      "#S.A.A.E#",
+      "#########"
+    ],
+    "solution": "for i in range(10):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    else:\n        hero.moveRight()",
+    "gear": [
+      "hammer"
+    ],
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c10-shell",
+    "chapter": 10,
+    "title": "咬人很痛",
+    "concept": "防禦減少傷害",
+    "brief": "大 bug 每口咬掉 2 點血。穿上鋁合金殼，每口只剩 1 點，就不必停下來補血了。",
+    "hint": "防禦 1 的護甲讓大 bug 每口只咬掉 1 點。用 if hero.enemyAt('right') 決定攻擊還是前進，總共 14 步。沒有護甲也能過關，記得撿修復包、找空檔補血。",
+    "map": [
+      "###########",
+      "#S+.B..B.E#",
+      "###########"
+    ],
+    "solution": "for i in range(14):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    else:\n        hero.moveRight()",
+    "gear": [
+      "shell"
+    ],
+    "challenge": {
+      "moves": 2
+    }
+  },
+  {
+    "id": "c10-long-fight",
+    "chapter": 10,
+    "title": "長期抗戰",
+    "concept": "血量上限",
+    "brief": "這條路的 bug 一隻接一隻，打完全部要扣掉 11 點血。換上雙核電池，血量上限變成 14，一口氣衝過去！",
+    "hint": "先修好大 bug，再一路修好 5 隻小 bug。同樣用 for 加 if，總共 19 步。只有小電池的話，要撿修復包，在血量不夠前補血。",
+    "map": [
+      "##############",
+      "#S+.B.bbbbb.E#",
+      "##############"
+    ],
+    "solution": "for i in range(19):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    else:\n        hero.moveRight()",
+    "gear": [
+      "dualBattery"
+    ],
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c10-mixed",
+    "chapter": 10,
+    "title": "混合部隊",
+    "concept": "同一段程式，不同敵人",
+    "brief": "裝甲 bug、大 bug、小 bug 混在一起。好消息是：用 if 寫的程式不用管每隻要打幾下，看到 bug 就攻擊就對了。",
+    "hint": "穿上電磁槌和鋁合金殼，for 迴圈跑 19 次，裡面用 if hero.enemyAt('right') 決定攻擊或前進。",
+    "map": [
+      "###############",
+      "#S+.A.B+.b.A.E#",
+      "###############"
+    ],
+    "solution": "for i in range(19):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    else:\n        hero.moveRight()",
+    "gear": [
+      "hammer",
+      "shell"
+    ],
+    "challenge": {
+      "moves": 2
+    }
+  },
+  {
+    "id": "c10-tunnel",
+    "chapter": 10,
+    "title": "裝甲隧道",
+    "concept": "elif 加上裝備",
+    "brief": "隧道轉了兩個彎，裝甲 bug 守在右邊和下面。帶著電磁槌，用 if、elif、else 處理每一種情況。",
+    "hint": "順序：右邊有 bug 就往右攻擊，下面有 bug 就往下攻擊，右邊能走就往右，不然往下。總共 16 步。",
+    "map": [
+      "#########",
+      "#S.A#####",
+      "###.#####",
+      "###A+.A##",
+      "######.##",
+      "######.E#",
+      "#########"
+    ],
+    "solution": "for i in range(16):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    elif hero.enemyAt('down'):\n        hero.attack('down')\n    elif hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()",
+    "gear": [
+      "hammer"
+    ],
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c10-fixed-count",
+    "chapter": 10,
+    "title": "寫死的次數",
+    "concept": "除錯：換了裝備",
+    "brief": "這段程式是 BIT 拿扳手時寫的，要打 4 下。換上電磁槌之後只要打 2 下，第 3 下就揮空了！找出要改的那個數字。",
+    "hint": "電磁槌打裝甲 bug 每下扣 2 點，牠只有 4 點血。看看訊息是第幾行出錯，把攻擊的次數改對。",
+    "map": [
+      "########",
+      "#S.A..E#",
+      "########"
+    ],
+    "solution": "hero.moveRight()\nfor i in range(2):\n    hero.attack('right')\nfor i in range(4):\n    hero.moveRight()",
+    "starter": "# 這段程式有 1 個錯誤\nhero.moveRight()\nfor i in range(4):\n    hero.attack('right')\nfor i in range(4):\n    hero.moveRight()",
+    "gear": [
+      "hammer"
+    ],
+    "challenge": {
+      "edits": 1,
+      "solution": "# 這段程式有 1 個錯誤\nhero.moveRight()\nfor i in range(2):\n    hero.attack('right')\nfor i in range(4):\n    hero.moveRight()"
+    }
+  },
+  {
+    "id": "c10-fortress",
+    "chapter": 10,
+    "title": "裝甲要塞",
+    "concept": "綜合：作戰計畫",
+    "brief": "要塞裡有裝甲 bug、大 bug 和小 bug。先把電磁槌、鋁合金殼、雙核電池都裝上，再規劃一條路線修好全部的 bug。",
+    "hint": "上排往右：裝甲 bug 和大 bug 各打 2 下，拿到能源後往下走 2 格。下排往左：大 bug 和裝甲 bug 各打 2 下，小 bug 打 1 下，最後走到傳送門。總共 25 步。",
+    "map": [
+      "##########",
+      "#S+A.B.+*#",
+      "########+#",
+      "#E+b.A.B.#",
+      "##########"
+    ],
+    "solution": "hero.moveRight()\nfor i in range(2):\n    hero.attack('right')\nfor i in range(2):\n    hero.moveRight()\nfor i in range(2):\n    hero.attack('right')\nfor i in range(4):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveDown()\nfor i in range(2):\n    hero.attack('left')\nfor i in range(2):\n    hero.moveLeft()\nfor i in range(2):\n    hero.attack('left')\nfor i in range(2):\n    hero.moveLeft()\nhero.attack('left')\nfor i in range(3):\n    hero.moveLeft()",
+    "gear": [
+      "hammer",
+      "shell",
+      "dualBattery"
+    ],
+    "challenge": {
+      "firstTry": true
+    }
+  },
+  {
+    "id": "c10-last-line",
+    "chapter": 10,
+    "title": "最後防線",
+    "concept": "綜合：裝備與條件",
+    "brief": "礁岩的盡頭擋著兩隻大 bug 和兩隻裝甲 bug。全副武裝的 BIT，只要一段短短的程式就能突破！",
+    "hint": "裝上三件裝備，for 迴圈跑 17 次，有 bug 就攻擊、沒有就前進。只寫兩個動作指令就能拿到徽章。",
+    "map": [
+      "############",
+      "#S+B+A+B+AE#",
+      "############"
+    ],
+    "solution": "for i in range(17):\n    if hero.enemyAt('right'):\n        hero.attack('right')\n    else:\n        hero.moveRight()",
+    "gear": [
+      "hammer",
+      "shell",
+      "dualBattery"
+    ],
+    "challenge": {
+      "moves": 2
+    }
+  }
+]

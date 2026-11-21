@@ -1,0 +1,522 @@
+{
+  "c1-wake-up": {
+    "title": "Despierta al explorador",
+    "concept": "Orden de los comandos",
+    "brief": "Guía a BIT para recoger 2 celdas de energía y luego llegar al portal verde.",
+    "hint": "Primero ve 2 pasos a la derecha, luego 2 pasos abajo y por último 3 pasos a la derecha. Cada comando mueve a BIT un paso."
+  },
+  "c1-energy-corridor": {
+    "title": "Pasillo de energía",
+    "concept": "Bucles de repetición",
+    "brief": "¡Este camino es largo! Intenta usar el bloque Repeat para que tu programa sea más corto.",
+    "hint": "5 veces a la derecha, 3 veces abajo y luego 4 veces a la izquierda. En modo Código puedes usar for i in range(5): y poner 4 espacios de sangría en la línea siguiente."
+  },
+  "c1-forked-path": {
+    "title": "El secreto del cruce",
+    "concept": "Planear la ruta",
+    "brief": "Estudia el cruce del camino. Recoge las 3 celdas de energía y encuentra el camino a casa.",
+    "hint": "La celda de energía de arriba está al final de un desvío, así que tienes que volver. Ve 2 a la derecha, 2 a la izquierda, 3 abajo, 5 a la derecha y 3 arriba."
+  },
+  "c1-spiral": {
+    "title": "Ruinas en espiral",
+    "concept": "Rutas largas",
+    "brief": "El pasillo de las ruinas da vueltas y vueltas como una espiral. Averigua la dirección y el largo de cada parte, y escríbelas una por una.",
+    "hint": "Ve 6 a la derecha, 4 abajo, 6 a la izquierda, luego 2 arriba y por último 4 a la derecha. Cada parte se puede hacer con un bloque Repeat."
+  },
+  "c1-zigzag": {
+    "title": "Sendero en zigzag",
+    "concept": "Varios comandos en un bucle",
+    "brief": "El sendero de la montaña va en zigzag: derecha, abajo, derecha, abajo… ¡Intenta poner derecha y abajo juntos en el mismo bucle!",
+    "hint": "Cambia a modo Código. Un bucle for puede tener varias líneas, cada una con 4 espacios de sangría: debajo de for i in range(4): escribe hero.moveRight() y hero.moveDown(). En modo Bloques, toca Repeat y pon right y down dentro."
+  },
+  "c1-pattern": {
+    "title": "Terreno que se repite",
+    "concept": "Encuentra el patrón",
+    "brief": "El terreno se repite una y otra vez: derecha, derecha, abajo… Encuentra el patrón y termina con el programa más corto.",
+    "hint": "Cada parte es \"2 a la derecha, 1 abajo\", repetida 3 veces en total. Pon estos tres movimientos dentro del mismo bucle."
+  },
+  "c1-big-stairs": {
+    "title": "Escalera gigante",
+    "concept": "Bucles anidados",
+    "brief": "Cada escalón de esta escalera es ancho: 3 a la derecha, 2 abajo. ¡Puedes poner un bucle dentro de otro bucle!",
+    "hint": "El bucle de fuera se repite 2 veces. Dentro, pon un bucle \"Repetir 3 veces: derecha\" y luego un bucle \"Repetir 2 veces: abajo\". Pon 4 espacios más de sangría a los bucles de dentro."
+  },
+  "c1-alleys": {
+    "title": "Callejones de energía",
+    "concept": "Ir y volver",
+    "brief": "Cada callejón tiene una celda de energía al final. Después de tomarla, vuelve al camino principal. Encuentra el patrón: avanza, entra a mirar y vuelve.",
+    "hint": "Cada parte es: 2 a la derecha, 2 arriba, 2 abajo. Pon estos tres movimientos en un bucle y repítelo 4 veces. En la última vuelta, BIT entra en el portal y se detiene solo."
+  },
+  "c1-best-route": {
+    "title": "La mejor ruta",
+    "concept": "Piensa primero",
+    "brief": "Dos celdas de energía están en esquinas opuestas. ¡La que tomes primero cambia el total de pasos! Encuentra el orden con menos pasos.",
+    "hint": "Ve primero a la celda de energía de la esquina de arriba a la izquierda, luego a la de abajo a la derecha y por último al portal de arriba a la derecha: 19 pasos en total. Al revés son 2 pasos más y no ganas la estrella de la ruta más corta."
+  },
+  "c1-finale": {
+    "title": "Guardián del bosque",
+    "concept": "Desafío final",
+    "brief": "¡El último nivel del bosque! Encima de cada escalón se esconde una celda de energía. Usa los trucos de bucles que aprendiste para escribir el programa más corto.",
+    "hint": "Cada parte es: 2 a la derecha, 1 arriba, 1 abajo y otra vez 1 abajo. Repítelo 4 veces. En el último movimiento hacia arriba, BIT entra en el portal."
+  },
+  "c2-staircase": {
+    "title": "Camino de escalones",
+    "concept": "Condición if",
+    "brief": "El camino va a la derecha, luego abajo y otra vez a la derecha. Usa if para que BIT decida: si puede ir a la derecha, va a la derecha; si no, baja.",
+    "hint": "Cambia a modo Código. Dentro del bucle for, escribe if hero.canMove('right'): y en la línea siguiente, con sangría, muévete a la derecha. Luego escribe else: y baja. Necesitas 10 pasos en total. En modo Bloques, pon un bloque If dentro de Repeat, y pon el bloque down dentro de Else."
+  },
+  "c2-waterfall": {
+    "title": "Escalera de la cascada",
+    "concept": "Orden de comprobaciones",
+    "brief": "¡Cuidado con el cruce! La dirección que compruebes primero cambia lo que pasa.",
+    "hint": "A la derecha del inicio hay un callejón sin salida. Esta vez, comprueba primero si BIT puede bajar: if hero.canMove('down'):, y ve a la derecha solo si no puede. 9 pasos en total. También puedes escribir if not hero.canMove('down'):."
+  },
+  "c2-winding-river": {
+    "title": "Río serpenteante",
+    "concept": "elif",
+    "brief": "¡Esta vez el camino da la vuelta hacia arriba! Comprueba la derecha, luego abajo, y si no funciona ninguno, sube.",
+    "hint": "Primero escribe if hero.canMove('right'):, luego usa elif hero.canMove('down'): para comprobar abajo, y por último else: sube. 9 pasos en total."
+  },
+  "c2-landing": {
+    "title": "Rellano",
+    "concept": "Varios comandos por rama",
+    "brief": "Esta escalera baja 2 casillas cada vez. ¡Cuidado! Si solo bajas 1, el desvío te engañará.",
+    "hint": "Puedes poner dos comandos bajo else:. Primero hero.moveDown() y luego otra vez hero.moveDown(). El bucle debe repetirse 8 veces."
+  },
+  "c2-peek": {
+    "title": "Busca la energía",
+    "concept": "if sin else",
+    "brief": "Pequeños huecos encima del camino principal esconden celdas de energía, pero no están a la misma distancia. ¡Haz que BIT mire arriba después de cada paso!",
+    "hint": "Dentro del bucle, primero hero.moveRight() y luego if hero.canMove('up'): sube y vuelve a bajar. Un if no necesita else: si la comprobación es falsa, no pasa nada."
+  },
+  "c2-peek-both": {
+    "title": "Mira arriba y abajo",
+    "concept": "Dos if",
+    "brief": "Esta vez las celdas de energía se esconden encima y debajo del camino principal, a veces en los dos lados. Después de cada paso, mira hacia ambos lados.",
+    "hint": "Después de un paso a la derecha, usa un if para comprobar arriba y otro if para comprobar abajo. Son dos if separados, no elif."
+  },
+  "c2-two-rules": {
+    "title": "Ruta en dos partes",
+    "concept": "Dos bucles, dos reglas",
+    "brief": "La primera mitad baja hacia la derecha, pero la segunda baja hacia la izquierda. Una sola regla no basta. ¡Prueba con dos bucles!",
+    "hint": "El primer bucle se repite 8 veces: ve a la derecha si puedes; si no, baja. El segundo bucle se repite 8 veces: baja si puedes; si no, ve a la izquierda."
+  },
+  "c2-long-river": {
+    "title": "Río largo",
+    "concept": "Sin contar pasos",
+    "brief": "Este río es largo y lleno de curvas, ¡y contar pasos cansa! Si tus reglas son correctas, no pasa nada si el bucle se repite de más.",
+    "hint": "Comprueba en este orden: derecha, abajo, arriba (if / elif / else). Haz que el bucle se repita 20 veces. BIT se detiene solo al entrar en el portal."
+  },
+  "c2-warehouse": {
+    "title": "Almacén subterráneo",
+    "concept": "Movimientos combinados",
+    "brief": "Primero recorre el pasillo y toma las celdas de energía que hay encima; luego sigue la escalera hacia abajo a la izquierda hasta el portal. ¡Combina los dos trucos que aprendiste!",
+    "hint": "Primer bucle (6 veces): un paso a la derecha y, si puedes subir, sube y vuelve a bajar. Segundo bucle (8 veces): baja si puedes; si no, ve a la izquierda."
+  },
+  "c2-finale": {
+    "title": "Guardián de la niebla",
+    "concept": "if dentro de if",
+    "brief": "Esta escalera sube hacia la derecha y algunos escalones esconden una celda de energía debajo. BIT solo tiene que mirar abajo después de ir a la derecha. ¡Puedes poner un if dentro de otro if!",
+    "hint": "La regla: si puedes ir a la derecha, ve a la derecha y luego, si puedes bajar, baja y vuelve a subir. Si no puedes ir a la derecha, sube. Haz que el bucle se repita 20 veces."
+  },
+  "c3-count": {
+    "title": "Falta un paso",
+    "concept": "Depurar: cantidades",
+    "brief": "¡El programa de BIT en la Fábrica de errores tiene un error! Ejecútalo, mira dónde choca BIT con la pared y encuentra el número equivocado.",
+    "hint": "Cuando BIT choca con una pared, el mensaje te dice en qué línea fue. BIT debe ir 5 pasos a la derecha. ¿Qué número usa el programa?",
+    "starter": "# Este programa tiene 1 error\nfor i in range(4):\n    hero.moveRight()\nfor i in range(3):\n    hero.moveDown()"
+  },
+  "c3-direction": {
+    "title": "Dirección equivocada",
+    "concept": "Depurar: dirección",
+    "brief": "Al final, BIT va hacia el lado equivocado. Ejecútalo una vez y mira hacia dónde va.",
+    "hint": "El portal está arriba a la derecha. La última parte debe ir hacia arriba, no hacia abajo.",
+    "starter": "# Este programa tiene 1 error\nfor i in range(2):\n    hero.moveUp()\nfor i in range(4):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveDown()"
+  },
+  "c3-indent": {
+    "title": "El secreto de la sangría",
+    "concept": "Depurar: sangría",
+    "brief": "Parece que están todos los comandos, pero BIT sigue chocando con la pared. ¡Mira bien los espacios al principio de cada línea!",
+    "hint": "La sangría decide si una línea está dentro del bucle. hero.moveDown() debe repetirse junto con hero.moveRight().",
+    "starter": "# Este programa tiene 1 error\nfor i in range(3):\n    hero.moveRight()\nhero.moveDown()"
+  },
+  "c3-condition": {
+    "title": "Comprobación al revés",
+    "concept": "Depurar: condiciones",
+    "brief": "Este programa comprueba una dirección pero se mueve en otra. ¡La comprobación y el movimiento deben coincidir!",
+    "hint": "La dirección que compruebas con if debe ser la dirección en la que te mueves después. Aquí queremos: si puedes ir a la derecha, ve a la derecha.",
+    "starter": "# Este programa tiene 1 error\nfor i in range(9):\n    if hero.canMove('down'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c3-missing-else": {
+    "title": "BIT atascado",
+    "concept": "Depurar: falta else",
+    "brief": "El programa terminó, pero BIT se quedó a mitad de camino y no se mueve. ¿Qué situación encontró BIT para la que el programa no le dijo qué hacer?",
+    "hint": "Cuando BIT no puede ir a la derecha ni abajo, tiene que subir. Agrega else: después del elif, con hero.moveUp() dentro.",
+    "starter": "# Este programa tiene 1 error\nfor i in range(9):\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c3-two-bugs": {
+    "title": "Doble problema",
+    "concept": "Depurar: dos errores",
+    "brief": "¡Esta vez hay 2 errores! Cuando arregles uno, vuelve a ejecutarlo y mira hasta dónde llega BIT.",
+    "hint": "Cada escalón es 3 a la derecha y luego 1 arriba. Revisa cuántas veces se repite el bucle de dentro y la dirección del último movimiento.",
+    "starter": "# Este programa tiene 2 errores\nfor i in range(2):\n    for j in range(2):\n        hero.moveRight()\n    hero.moveDown()"
+  },
+  "c3-peek-return": {
+    "title": "Olvidó volver",
+    "concept": "Depurar: falta un comando",
+    "brief": "Después de que BIT baja a tomar una celda de energía, nunca vuelve al camino principal. ¿Qué se le olvidó hacer?",
+    "hint": "Después de bajar a tomar la celda de energía, BIT debe volver a subir al camino principal. Agrega hero.moveUp() dentro del if.",
+    "starter": "# Este programa tiene 1 error\nfor i in range(6):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c3-check-order": {
+    "title": "¿Dónde mirar primero?",
+    "concept": "Depurar: orden de comprobaciones",
+    "brief": "A la izquierda del inicio no hay salida. El programa comprueba primero la izquierda, así que BIT se equivoca de camino desde el principio.",
+    "hint": "En este mapa, comprueba primero si BIT puede bajar, y ve a la izquierda solo si no puede. Cambia la condición del if e intercambia los dos movimientos.",
+    "starter": "# Este programa tiene 1 error\nfor i in range(9):\n    if hero.canMove('left'):\n        hero.moveLeft()\n    else:\n        hero.moveDown()"
+  },
+  "c3-two-phases": {
+    "title": "Fallo en dos partes",
+    "concept": "Depurar: dos bucles",
+    "brief": "Esta ruta baja en la primera mitad y sube en la segunda. ¡Cada uno de los dos bucles esconde un error!",
+    "hint": "El primer bucle tiene que repetirse 7 veces para llegar abajo del todo. En el segundo bucle, cuando BIT no puede ir a la derecha, debe subir, no bajar.",
+    "starter": "# Este programa tiene 2 errores\nfor i in range(6):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()\nfor i in range(7):\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c3-core": {
+    "title": "Núcleo de la fábrica",
+    "concept": "Depurar: desafío final",
+    "brief": "¡El programa del núcleo de la fábrica tiene 3 errores! Arregla uno a la vez y ejecútalo después de cada arreglo. BIT te mostrará dónde está el siguiente problema.",
+    "hint": "Pistas: el número de veces del primer bucle, la dirección en la que BIT vuelve después de mirar, y el orden de comprobaciones del segundo bucle (debe mirar primero a la derecha).",
+    "starter": "# Este programa tiene 3 errores\nfor i in range(4):\n    hero.moveRight()\n    if hero.canMove('down'):\n        hero.moveDown()\n        hero.moveDown()\nfor i in range(10):\n    if hero.canMove('down'):\n        hero.moveDown()\n    elif hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveUp()"
+  },
+  "c4-until-goal": {
+    "title": "Sin final a la vista",
+    "concept": "Bucles while",
+    "brief": "Este pasillo es tan largo que no se ve el final, y no puedes contar los pasos. Prueba algo nuevo: dile a BIT \"sigue caminando hasta llegar al portal\".",
+    "hint": "Cambia a modo Código y escribe while not hero.atGoal():; en la línea siguiente, con 4 espacios de sangría, escribe hero.moveRight(). No hace falta contar pasos: BIT se detiene al llegar al portal. En modo Bloques, usa el bloque While y elige la condición \"not at the goal\"."
+  },
+  "c4-wall-run": {
+    "title": "Corre hasta la pared",
+    "concept": "while con canMove",
+    "brief": "Recorre cada pasillo hasta el final antes de girar. while también funciona con hero.canMove(): sigue mientras BIT pueda avanzar.",
+    "hint": "Escribe tres while: while hero.canMove('right'): ve a la derecha, luego baja y por último ve a la izquierda. Cada while se detiene justo antes de que BIT choque con una pared."
+  },
+  "c4-auto-stairs": {
+    "title": "Escalera automática",
+    "concept": "if dentro de while",
+    "brief": "Cada escalón tiene un largo distinto. Pon dentro de un while las comprobaciones que aprendiste en el Capítulo 2, y BIT encontrará solo el camino al portal.",
+    "hint": "Dentro de while not hero.atGoal():, escribe if hero.canMove('right'): ve a la derecha, else: baja."
+  },
+  "c4-peek-while": {
+    "title": "Mira mientras avanzas",
+    "concept": "while y mirar",
+    "brief": "Sigue a la derecha por el pasillo. Pequeños huecos encima esconden celdas de energía. Sea cual sea el largo del pasillo, el portal está al final.",
+    "hint": "Dentro de while hero.canMove('right'):, primero da un paso a la derecha y luego usa if hero.canMove('up'): para subir a tomar la celda de energía y volver a bajar."
+  },
+  "c4-endless-river": {
+    "title": "Río sin fin",
+    "concept": "while con elif",
+    "brief": "¡El río más largo hasta ahora! Ya no hay que adivinar cuántas veces se repite el bucle. Si tus reglas son correctas, BIT llegará hasta el portal.",
+    "hint": "Dentro de while not hero.atGoal():, comprueba en orden: si puedes ir a la derecha, ve a la derecha; elif puedes bajar, baja; else sube."
+  },
+  "c4-stuck-loop": {
+    "title": "BIT no puede parar",
+    "concept": "Depurar: bucles infinitos",
+    "brief": "BIT deja de moverse a mitad de camino, pero el bucle sigue y nunca se detiene. ¡Eso es un \"bucle infinito\"! Busca qué olvidó decirle el programa a BIT en el lugar donde se atasca.",
+    "hint": "Donde BIT se atasca, no puede ir a la derecha ni abajo, solo arriba. Agrega else: después del elif, con hero.moveUp() dentro.",
+    "starter": "# Este programa tiene 1 error\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    elif hero.canMove('down'):\n        hero.moveDown()"
+  },
+  "c4-spiral": {
+    "title": "Pasillo en espiral",
+    "concept": "while dentro de while",
+    "brief": "El pasillo gira hacia el centro y cada parte es más corta que la anterior. ¡Puedes poner un while dentro de otro while!",
+    "hint": "Por fuera, escribe while not hero.atGoal():. Dentro, pon cuatro while: sigue a la derecha mientras puedas, luego abajo, a la izquierda y arriba, cada uno hasta el final."
+  },
+  "c5-hop": {
+    "title": "Salta las rocas",
+    "concept": "Funciones def",
+    "brief": "Hay 3 rocas grandes en el camino. Para saltar cada una: arriba, derecha, derecha, abajo. Escribir lo mismo 3 veces cansa, ¡así que ponle un nombre!",
+    "hint": "Cambia a modo Código. Primero escribe def hop(): y debajo, con sangría, los 4 movimientos para saltar una roca. Después, solo escribe hop() y BIT salta una vez. La distancia entre las rocas es distinta cada vez."
+  },
+  "c5-tower": {
+    "title": "Sobre las torres",
+    "concept": "Bucles en funciones",
+    "brief": "Esta vez, pasa por encima de 3 torres altas: sube, cruza por arriba y baja. ¡También puedes poner bucles dentro de una función!",
+    "hint": "Dentro de def tower():, usa 3 bucles: 3 veces arriba, 2 veces a la derecha, 3 veces abajo. La distancia entre las torres cambia, así que acuérdate de caminar entre una llamada y otra."
+  },
+  "c5-two-funcs": {
+    "title": "Sube y baja",
+    "concept": "Dos funciones",
+    "brief": "El sendero de la montaña sube y baja sin un orden fijo. Define dos funciones, una para subir y otra para bajar, y llámalas en orden.",
+    "hint": "def up(): 1 paso arriba, 2 pasos a la derecha. def down(): 1 paso abajo, 2 pasos a la derecha. El orden es: up, up, down, up, down, down."
+  },
+  "c5-call-in-loop": {
+    "title": "Fábrica de escalones",
+    "concept": "Llamar en un bucle",
+    "brief": "Dos escaleras iguales, con una bajada en medio. Escribe un escalón como función y llámala en un bucle.",
+    "hint": "def step(): 2 pasos a la derecha, 2 pasos arriba. Primero usa un bucle for para llamar a step() 2 veces, ve 2 pasos a la derecha y 4 pasos abajo, y luego llámala 2 veces más."
+  },
+  "c5-forgot-call": {
+    "title": "Falta un salto",
+    "concept": "Depurar: falta una llamada",
+    "brief": "La función hop() está bien, pero BIT choca con una roca. ¿Delante de qué roca olvidó el programa decirle a BIT que saltara?",
+    "hint": "Una función solo se ejecuta cuando la llamas. Cuenta las rocas del mapa y cuántas veces escribe el programa hop().",
+    "starter": "# Este programa tiene 1 error\ndef hop():\n    hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n    hero.moveDown()\n\nfor i in range(2):\n    hero.moveRight()\nhop()\nfor i in range(3):\n    hero.moveRight()\nfor i in range(2):\n    hero.moveRight()\nhop()\nhero.moveRight()"
+  },
+  "c5-patrol": {
+    "title": "Patrulla en dos pisos",
+    "concept": "while en funciones",
+    "brief": "Dos pasillos, uno encima del otro, cada uno con celdas de energía escondidas encima. La patrulla es exactamente igual, así que escríbela como función y úsala dos veces.",
+    "hint": "Dentro de def patrol():, escribe while hero.canMove('right'): y, después de cada paso, usa if para comprobar arriba. Llama a patrol(), baja 2 pasos y vuelve a llamarla."
+  },
+  "c5-define-first": {
+    "title": "Comando desconocido",
+    "concept": "Depurar: primero define",
+    "brief": "Desde el principio, BIT dice que no sabe qué es climb(). El programa sí tiene def climb():, entonces, ¿qué está mal?",
+    "hint": "Python se ejecuta de arriba abajo. Cuando llega a climb(), el def de abajo todavía no se ha ejecutado. Mueve todo el bloque def climb(): arriba del todo.",
+    "starter": "# Este programa tiene 1 error\nclimb()\nhero.moveRight()\nclimb()\n\ndef climb():\n    for i in range(2):\n        hero.moveRight()\n        hero.moveUp()"
+  },
+  "c5-workshop": {
+    "title": "Avenida del taller",
+    "concept": "Combinar funciones",
+    "brief": "La Avenida del taller tiene rocas que saltar y agujeros que esconden celdas de energía. ¡Busca los movimientos repetidos y decide tú qué funciones definir!",
+    "hint": "Salta las rocas con hop(): arriba, derecha, derecha, abajo. Toma las celdas de energía de los agujeros con dip(): abajo y luego arriba. Llámalas en orden según el mapa, y acuérdate de caminar a la derecha entre una y otra."
+  },
+  "c6-steps": {
+    "title": "Escalones largos y cortos",
+    "concept": "Primer parámetro",
+    "brief": "Cada escalón es \"ve unos pasos a la derecha y luego un paso abajo\", pero el número de pasos cambia. ¡Usa una función con un parámetro y deja que cada llamada elija el número de pasos!",
+    "hint": "Dentro de def step(n):, escribe for i in range(n): para ir a la derecha, y luego baja un paso. Después llama a step(3), step(1), step(4), step(2) en orden."
+  },
+  "c6-hills": {
+    "title": "Colinas altas y bajas",
+    "concept": "Parámetro para la altura",
+    "brief": "Las tres colinas tienen alturas distintas, y cada una tiene una celda de energía arriba. Se sube siempre igual; solo cambia la altura.",
+    "hint": "def hill(h): sube h pasos, un paso a la derecha, luego baja h pasos y por último dos pasos a la derecha hasta la siguiente colina. Llama a hill(2), hill(4), hill(3)."
+  },
+  "c6-wrong-number": {
+    "title": "Número equivocado",
+    "concept": "Depurar: valores de parámetros",
+    "brief": "step() está bien escrita, pero BIT choca con una pared a mitad de camino. Compara el programa con el mapa: ¿qué llamada tiene el número equivocado?",
+    "hint": "Los pasos a la derecha de cada escalón son 2, 3, 1, 3, 2. Revisa el número entre paréntesis de cada línea step(), una por una.",
+    "starter": "# Este programa tiene 1 error\ndef step(n):\n    for i in range(n):\n        hero.moveRight()\n    hero.moveDown()\n\nstep(2)\nstep(3)\nstep(2)\nstep(3)\nstep(2)"
+  },
+  "c6-two-params": {
+    "title": "Ancho y estrecho",
+    "concept": "Dos parámetros",
+    "brief": "Aquí cada escalón tiene un ancho y un alto distintos. Una función puede tener dos parámetros, separados por una coma.",
+    "hint": "def stair(w, h): ve w pasos a la derecha y luego h pasos abajo. Al llamarla, separa también los números con una coma, como stair(3, 1)."
+  },
+  "c6-hardcoded": {
+    "title": "Números fijos",
+    "concept": "Depurar: parámetro sin usar",
+    "brief": "Cada pozo de la mina tiene una profundidad distinta, con una celda de energía al fondo. dig(n) tiene un parámetro n, pero BIT cava siempre lo mismo.",
+    "hint": "El range() de dentro de la función debe usar el parámetro n, no un número fijo. Revisa los dos bucles for.",
+    "starter": "# Este programa tiene 2 errores\ndef dig(n):\n    for i in range(2):\n        hero.moveDown()\n    for i in range(2):\n        hero.moveUp()\n    hero.moveRight()\n    hero.moveRight()\n\nhero.moveRight()\ndig(1)\ndig(3)\ndig(2)\ndig(3)"
+  },
+  "c6-pass-along": {
+    "title": "Montañas de bloques",
+    "concept": "Pasar parámetros",
+    "brief": "Cada montaña de bloques es tan ancha por arriba como alta. El suelo plano y la cima son los dos \"ve unos pasos a la derecha\", así que pueden compartir la misma función.",
+    "hint": "def run(n): ve n pasos a la derecha. def block(n): sube n pasos, llama a run(n) para cruzar la cima y luego baja n pasos. Llamar a run(n) dentro de una función le pasa su propio parámetro."
+  },
+  "c6-arg-order": {
+    "title": "El orden importa",
+    "concept": "Depurar: orden de parámetros",
+    "brief": "Este programa comete dos errores al llamar a stair(): a una llamada le falta un número y otra tiene el ancho y el alto al revés.",
+    "hint": "En stair(w, h), el primer número es el ancho (ir a la derecha) y el segundo es el alto (bajar). Cada llamada necesita dos números, en el mismo orden que en el def.",
+    "starter": "# Este programa tiene 2 errores\ndef stair(w, h):\n    for i in range(w):\n        hero.moveRight()\n    for i in range(h):\n        hero.moveDown()\n\nstair(3, 1)\nstair(3, 1)\nstair(2, 2)\nstair(1)\nstair(3, 2)"
+  },
+  "c6-gear-road": {
+    "title": "Avenida de engranajes",
+    "concept": "Combinar parámetros",
+    "brief": "La Avenida de engranajes tiene colinas de distintas alturas y pozos de distintas profundidades, con una celda de energía en cada cima y en el fondo de cada pozo. ¡Usa dos funciones con parámetros para completar toda la ruta!",
+    "hint": "hill(h): sube h pasos, ve a la derecha, baja h pasos. dig(d): baja d pasos y vuelve. Las dos funciones terminan con dos pasos a la derecha para llegar a la siguiente parte."
+  },
+  "c7-grow": {
+    "title": "Cada vez más largo",
+    "concept": "Primera variable",
+    "brief": "Cada escalón es un paso más largo que el anterior: 1, 2, 3, 4. Usa una variable n para recordar cuántos pasos necesita este escalón, y suma 1 a n después de cada escalón.",
+    "hint": "Primero escribe n = 1. Dentro del bucle, ve range(n) pasos a la derecha y un paso abajo, y por último escribe n += 1, así el siguiente escalón tendrá un paso más."
+  },
+  "c7-first-key": {
+    "title": "La primera llave",
+    "concept": "Llaves y puertas",
+    "brief": "¡Las puertas están cerradas con llave! Hay una llave en el pasadizo antes de cada puerta, y cada pasadizo es más profundo que el anterior. Cuando BIT recoge una llave, puede abrir una puerta.",
+    "hint": "Los pasadizos tienen 1, 2 y 3 de profundidad. Usa n para recordar la profundidad: sube n pasos para tomar la llave, baja n pasos para volver, ve dos pasos a la derecha por la puerta y por último n += 1."
+  },
+  "c7-forgot-add": {
+    "title": "Olvidó sumar uno",
+    "concept": "Depurar: variable que no cambia",
+    "brief": "Cada escalón debería ser un paso más largo que el anterior, pero BIT siempre camina dos pasos y choca con la pared en el segundo escalón. ¿Qué falta?",
+    "hint": "n siempre vale 2, porque ninguna línea lo cambia. Agrega n += 1 al final del bucle, alineado con hero.moveDown().",
+    "starter": "# Este programa tiene 1 error\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveRight()\n    hero.moveDown()"
+  },
+  "c7-countdown": {
+    "title": "Cada vez más corto",
+    "concept": "Cuenta regresiva y comparar",
+    "brief": "Esta vez los escalones son cada vez más cortos: 4, 3, 2, 1. Haz que n baje 1 cada vez y usa while n > 0: para seguir hasta que n llegue a 0.",
+    "hint": "Empieza con n = 4. Dentro del bucle, ve n pasos a la derecha, baja un paso y luego escribe n -= 1. Cuando n llega a 0, n > 0 ya no es verdad, así que el bucle se detiene."
+  },
+  "c7-wrong-indent": {
+    "title": "Sumado en mal lugar",
+    "concept": "Depurar: dónde va n += 1",
+    "brief": "Cada pozo es más profundo que el anterior, con una llave al fondo. Este programa hace que BIT cave demasiado en el segundo pozo y choque con el fondo.",
+    "hint": "n += 1 debe ocurrir una vez después de cada pozo completo, así que debe estar alineado con los bucles for dentro del bucle de fuera, no con sangría bajo hero.moveUp().",
+    "starter": "# Este programa tiene 1 error\nn = 2\nfor i in range(3):\n    for j in range(n):\n        hero.moveDown()\n    for j in range(n):\n        hero.moveUp()\n        n += 1\n    for j in range(3):\n        hero.moveRight()"
+  },
+  "c7-double": {
+    "title": "Cada vez más grande",
+    "concept": "Duplicar",
+    "brief": "Cada escalón es el doble de largo que el anterior: 1, 2, 4, 8. n = n + n hace que n sea el doble.",
+    "hint": "Empieza con n = 1. Dentro de while not hero.atGoal():, ve n pasos a la derecha, baja un paso y luego escribe n = n + n."
+  },
+  "c7-key-first": {
+    "title": "Primero la llave",
+    "concept": "Depurar: orden y cuenta regresiva",
+    "brief": "BIT se atasca en una puerta cerrada apenas empieza. Este programa tiene dos errores: uno es de orden y el otro hace que el bucle nunca se detenga.",
+    "hint": "BIT debe ir a la izquierda a tomar la llave y volver antes de bajar a abrir la puerta. Cada desvío es más corto que el anterior, así que el final debe ser n -= 1. El bucle solo se detiene cuando n llega a 0.",
+    "starter": "# Este programa tiene 2 errores\nn = 3\nwhile n > 0:\n    hero.moveDown()\n    hero.moveDown()\n    for i in range(n):\n        hero.moveLeft()\n    for i in range(n):\n        hero.moveRight()\n    n += 1"
+  },
+  "c7-vault": {
+    "title": "En el fondo de la bóveda",
+    "concept": "Variables, while y llaves",
+    "brief": "Cada escalón de la bóveda es más largo que el anterior. Encima del final de cada escalón hay una llave, y debajo, una puerta cerrada con llave. Encima del último escalón hay una celda de energía.",
+    "hint": "Usa while not hero.atGoal(): para seguir. En cada vuelta, ve n pasos a la derecha, sube a tomar la llave, baja dos pasos por la puerta y luego n += 1."
+  },
+  "c8-wait": {
+    "title": "Espera y luego ve",
+    "concept": "hero.wait()",
+    "brief": "Un robot guardia patrulla arriba y abajo en el cruce, y BIT no puede pisar su casilla. Usa hero.wait() para que BIT espere un paso en su lugar hasta que el guardia se aparte.",
+    "hint": "Primero camina dos pasos hasta justo antes del cruce y mira dónde está el guardia. Si bloquea el cruce, escribe hero.wait() para esperar un paso y luego ve a la derecha hasta el final."
+  },
+  "c8-watch": {
+    "title": "El momento justo",
+    "concept": "if con wait",
+    "brief": "Tres guardias vigilan tres cruces, cada uno a su ritmo. En vez de calcularlos uno por uno, deja que BIT mire por sí mismo: que vaya a la derecha si puede, y que espere si no puede.",
+    "hint": "Dentro de while not hero.atGoal():, pon if hero.canMove('right'): ve a la derecha, else: hero.wait()."
+  },
+  "c8-switch": {
+    "title": "Pisa el interruptor",
+    "concept": "Interruptores y compuertas",
+    "brief": "Una compuerta bloquea el camino de la derecha. Hay un interruptor brillante en el mapa. Písalo y se abren todas las compuertas.",
+    "hint": "Primero baja 3 pasos para pisar el interruptor y luego vuelve. Cuando la compuerta se abra, ve a la derecha hasta el final. Las tres partes pueden usar bucles for."
+  },
+  "c8-gate-guard": {
+    "title": "Guardia tras la compuerta",
+    "concept": "Interruptores, compuertas, guardias",
+    "brief": "El interruptor está al fondo a la derecha del pasillo. La compuerta está al principio del camino de abajo, y detrás patrulla un guardia. Abre primero la compuerta, luego vuelve y elige el momento justo para pasar.",
+    "hint": "Ve 8 pasos a la derecha hasta el interruptor, 8 a la izquierda para volver y 2 abajo por la compuerta. Para la última parte, usa while con if: ve a la derecha si puedes, espera si no puedes."
+  },
+  "c8-impatient": {
+    "title": "Demasiada prisa",
+    "concept": "Depurar: esperar",
+    "brief": "El programa de BIT no espera en el cruce, así que BIT choca con una pared. Ejecútalo y encuentra la línea donde BIT no debería girar.",
+    "hint": "Cuando un guardia bloquea el camino, BIT debe esperar en su lugar, no bajar. Cambia esa línea por hero.wait().",
+    "starter": "# Este programa tiene 1 error\nwhile not hero.atGoal():\n    if hero.canMove('right'):\n        hero.moveRight()\n    else:\n        hero.moveDown()"
+  },
+  "c8-core": {
+    "title": "Núcleo de la máquina",
+    "concept": "Esperar, interruptores, bucles",
+    "brief": "¡El núcleo final de la máquina! El pasillo de arriba tiene dos guardias y un interruptor al final. El camino de abajo tiene una compuerta y otro guardia, y el portal está al fondo a la izquierda.",
+    "hint": "Ve 10 pasos a la derecha: antes de cada uno, primero while not hero.canMove('right'): hero.wait() y luego da un paso a la derecha. Después de pisar el interruptor, baja 3, y en la última parte ve a la izquierda: muévete cuando puedas, espera cuando no puedas."
+  },
+  "c9-first-bug": {
+    "title": "El primer bug",
+    "concept": "Atacar",
+    "brief": "¡Un bug bloquea el camino! Ponte a su lado, arréglalo con hero.attack('right') y luego ve al portal.",
+    "hint": "Avanza 1 paso a la derecha y el bug quedará a tu derecha. Un hero.attack('right') arregla un bug pequeño; después avanza 4 pasos a la derecha. Mientras estés junto a un bug, te muerde tras cada paso."
+  },
+  "c9-big-bug": {
+    "title": "Tres golpes para un bug grande",
+    "concept": "Ataques repetidos",
+    "brief": "Los bugs grandes son más duros: hacen falta 3 ataques para arreglarlos y muerden más fuerte. ¡Ataca una y otra vez con un bucle!",
+    "hint": "Avanza 2 pasos a la derecha hasta el bug grande, ataca 3 veces con for i in range(3): y luego avanza 4 pasos a la derecha. Vigila la vida arriba."
+  },
+  "c9-bug-row": {
+    "title": "Una fila de bugs pequeños",
+    "concept": "Encuentra el patrón",
+    "brief": "Hay un bug pequeño en una de cada dos casillas del pasillo. Encuentra el patrón «avanzar, atacar, avanzar» y resuélvelo con un bucle.",
+    "hint": "Para cada bug: 1 paso a la derecha, atacar a la derecha y 1 paso más. Pon esas 3 líneas en for i in range(3): y termina con 2 pasos a la derecha."
+  },
+  "c9-look-first": {
+    "title": "Mira antes de atacar",
+    "concept": "Comprobar con enemyAt",
+    "brief": "Los bugs pueden estar en cualquier parte del pasillo. Usa if hero.enemyAt('right'): para ver si hay un bug a la derecha: si lo hay, ataca; si no, avanza.",
+    "hint": "Dentro de for i in range(14): escribe if hero.enemyAt('right'): y ataca a la derecha debajo; bajo else:, avanza a la derecha. Atacar y caminar cuentan un paso cada uno, 14 en total."
+  },
+  "c9-corner-bugs": {
+    "title": "Bugs en la esquina",
+    "concept": "elif para varios casos",
+    "brief": "El camino gira y los bugs pueden estar a la derecha o abajo. Resuelve todos los casos a la vez con if, elif y else.",
+    "hint": "El orden importa: primero mira si hay un bug a la derecha, luego si hay uno abajo; después avanza a la derecha si puedes y, si no, baja. 13 pasos en total."
+  },
+  "c9-wrong-way": {
+    "title": "Hacia el lado equivocado",
+    "concept": "Depurar: dirección del ataque",
+    "brief": "Este programa ataca hacia el lado equivocado y BIT golpea una pared. Ejecútalo, encuentra el error y corrígelo.",
+    "hint": "El bug está debajo de BIT, no a su derecha. Mira qué línea indica el mensaje y corrige la dirección en esa línea.",
+    "starter": "# Este programa tiene 1 error\nfor i in range(2):\n    hero.moveDown()\nhero.attack('right')\nfor i in range(2):\n    hero.moveDown()\nfor i in range(2):\n    hero.moveRight()"
+  },
+  "c9-low-health": {
+    "title": "Poca vida",
+    "concept": "Comparar hero.health",
+    "brief": "Hay demasiados bugs en este camino: la vida de BIT no llegará al final. Recoge el kit de reparación y, cuando la vida baje, cúrate con hero.heal().",
+    "hint": "Al principio del bucle añade if hero.health < 3: hero.heal(); luego elif comprueba si hay un bug a la derecha, y else avanza a la derecha. 18 pasos en total."
+  },
+  "c9-bug-nest": {
+    "title": "El nido de bugs",
+    "concept": "Todo junto: un plan de batalla",
+    "brief": "Dos bugs grandes vigilan el corazón de la Isla Bug. Recoge el kit de reparación, decide cuándo curarte, arregla todos los bugs y vuelve al portal.",
+    "hint": "Avanza 3 a la derecha para recoger el kit, ataca 3 veces al bug grande y cúrate enseguida. Rodea hasta la fila de abajo y ve a la izquierda para arreglar el otro bug grande y el pequeño; luego camina al portal."
+  },
+  "c10-armored": {
+    "title": "Bugs acorazados",
+    "concept": "Ataque menos defensa",
+    "brief": "Los bugs acorazados tienen 1 de defensa, así que cada golpe de llave inglesa solo quita 1. Toca el icono de la llave arriba a la derecha para abrir el taller y compra un martillo magnético con tus engranajes.",
+    "hint": "El daño es ataque menos defensa. El martillo magnético tiene 3 de ataque, así que quita 2 por golpe a un bug acorazado: con dos golpes queda arreglado. Usa un bucle for con if hero.enemyAt('right'): ataca si hay un bug y, si no, avanza a la derecha, 10 pasos en total."
+  },
+  "c10-shell": {
+    "title": "Mordiscos fuertes",
+    "concept": "La defensa reduce el daño",
+    "brief": "Los bugs grandes quitan 2 de vida por mordisco. Con una carcasa de aleación cada mordisco quita solo 1 y BIT no tiene que pararse a curarse.",
+    "hint": "Una armadura de 1 de defensa hace que cada mordisco de bug grande quite solo 1. Usa if hero.enemyAt('right') para elegir entre atacar y avanzar, 14 pasos en total. También se puede ganar sin armadura: recoge el kit y cúrate entre peleas."
+  },
+  "c10-long-fight": {
+    "title": "La pelea larga",
+    "concept": "Vida máxima",
+    "brief": "Un bug tras otro: arreglarlos todos cuesta 11 de vida. Con una pila doble BIT tiene 14 de vida y puede pasar de un tirón.",
+    "hint": "Arregla el bug grande y luego los 5 pequeños. Usa otra vez for con if, 19 pasos en total. Con solo la pila pequeña, recoge el kit y cúrate antes de quedarte sin vida."
+  },
+  "c10-mixed": {
+    "title": "Escuadrón mixto",
+    "concept": "Mismo código, enemigos distintos",
+    "brief": "Bugs acorazados, grandes y pequeños en el mismo pasillo. La buena noticia: el código que comprueba con if no necesita saber cuántos golpes lleva cada uno. ¡Ves un bug, lo atacas!",
+    "hint": "Ponte el martillo magnético y la carcasa, repite un bucle for 19 veces y dentro usa if hero.enemyAt('right') para atacar o avanzar."
+  },
+  "c10-tunnel": {
+    "title": "Túnel acorazado",
+    "concept": "elif con equipo",
+    "brief": "El túnel gira dos veces y hay bugs acorazados a la derecha y abajo. Con el martillo magnético, resuelve cada caso con if, elif y else.",
+    "hint": "En orden: si hay un bug a la derecha, ataca a la derecha; si hay uno abajo, ataca abajo; si puedes ir a la derecha, ve; si no, baja. 16 pasos en total."
+  },
+  "c10-fixed-count": {
+    "title": "Un número fijo",
+    "concept": "Depurar: equipo nuevo",
+    "brief": "Este programa se escribió cuando BIT tenía una llave inglesa, así que ataca 4 veces. Con el martillo magnético bastan 2 golpes y el tercero golpea el aire. Encuentra el número que hay que cambiar.",
+    "hint": "El martillo magnético quita 2 de vida por golpe a un bug acorazado, que solo tiene 4. Mira qué línea indica el mensaje y corrige el número de ataques.",
+    "starter": "# Este programa tiene 1 error\nhero.moveRight()\nfor i in range(4):\n    hero.attack('right')\nfor i in range(4):\n    hero.moveRight()"
+  },
+  "c10-fortress": {
+    "title": "Fortaleza acorazada",
+    "concept": "Todo junto: un plan de batalla",
+    "brief": "En la fortaleza hay bugs acorazados, grandes y pequeños. Ponte el martillo magnético, la carcasa y la pila doble, y planea una ruta que los arregle todos.",
+    "hint": "Fila de arriba, hacia la derecha: 2 golpes al bug acorazado y 2 al grande, recoge la energía y baja 2. Fila de abajo, hacia la izquierda: 2 golpes al bug grande y 2 al acorazado, 1 al pequeño, y camina al portal. 25 pasos en total."
+  },
+  "c10-last-line": {
+    "title": "La última línea",
+    "concept": "Todo junto: equipo y condiciones",
+    "brief": "Dos bugs grandes y dos acorazados bloquean el final del arrecife. Con todo el equipo, BIT pasa con un programa muy corto.",
+    "hint": "Ponte las tres piezas de equipo y repite un bucle for 17 veces: ataca si hay un bug y, si no, avanza. Escribe solo dos órdenes de acción para ganar la medalla."
+  }
+}
